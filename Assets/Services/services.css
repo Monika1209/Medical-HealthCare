@@ -1,0 +1,454 @@
+
+
+
+.navbar {
+    background-color: #f8f9fa; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
+    padding: 10px 20px; /* Add padding */
+    position: fixed; /* Fix navbar on top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Show dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optionally, add smooth transition */
+.dropdown-menu {
+    display: none;
+    transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 60px; /* Adjust logo height */
+    width: 80px; /* Adjust logo width */
+    object-fit: cover; /* Ensure the image covers the container */
+    margin-left: 50px; /* Move logo a little to the left */
+}
+.navbar-nav {
+    margin: 0 auto; /* Center the menu */
+}
+.navbar-nav .nav-item {
+    margin: 0 10px; /* Add some spacing between menu items */
+}
+.navbar-nav .nav-link {
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.navbar-nav .nav-link:hover {
+    color: #28a745 !important; /* Green color on hover */
+}
+.btn-book-ambulance {
+    background-color: #28a745; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.btn-book-ambulance:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    margin-top: 0; 
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #28a745 !important; /* Green color on hover */
+}
+
+.dropdown-menu .dropdown-item {
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    font-weight: bold !important; /* Bold text */
+}
+
+
+/* ------------------------------------------------------------------ */
+
+/* Ensure full width padding on smaller screens */
+@media (max-width: 1200px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Adjust the header container for smaller screens */
+@media (max-width: 992px) {
+    .header {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .display-2 {
+        font-size: 2.5rem;  /* Adjust the font size for medium screens */
+    }
+}
+
+/* Further reduce font size on smaller devices like tablets and phones */
+@media (max-width: 768px) {
+    .header {
+        text-align: center;  /* Center align the text on smaller screens */
+    }
+
+    .display-2 {
+        font-size: 2rem;  /* Reduce font size on mobile */
+    }
+
+    .h5 {
+        font-size: 1.2rem;  /* Smaller subheading on mobile */
+    }
+
+    .container-fluid {
+        padding: 60px 15px;  /* Less padding for smaller screens */
+    }
+
+    .para h2{
+        font-size: 35px !important;
+    }
+
+    .para .mb-3{
+        font-size: 20px !important;
+    }
+
+    .para .mb-4{
+        font-size: 15px !important;
+    }
+}
+
+/* For even smaller screens, like phones */
+@media (max-width: 480px) {
+    .display-2 {
+        font-size: 18px !important;  /* Further reduce font size on very small screens */
+    }
+
+    .h5 {
+        font-size: 1rem;  /* Smaller font size for subheading */
+    }
+
+    .container-fluid {
+        padding: 50px 15px;  /* Reduce padding for ultra small screens */
+    }
+
+    .para h2{
+        font-size: 35px !important;
+    }
+
+    .para .mb-3{
+        font-size: 20px !important;
+    }
+
+    .para .mb-4{
+        font-size: 15px !important;
+    }
+
+    .para2 h2{
+        font-size: 35px !important;
+    }
+
+    .para2 .mb-3{
+        font-size: 20px !important;
+    }
+
+    .para2 .mb-4{
+        font-size: 15px !important;
+    }
+}
+
+  /* -------------------------------------------------------------------------------------- */
+
+  .img-container {
+    position: relative;
+    display: inline-block;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    overflow: hidden;
+}
+
+.border-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.border-effect::before, 
+.border-effect::after,
+.border-effect .left,
+.border-effect .right {
+    content: '';
+    position: absolute;
+    border: 2px solid white;
+    transition: all 0.5s ease;
+    margin: 15px;
+}
+
+.border-effect::before { /* Top border */
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.border-effect .right { /* Right border */
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 0;
+}
+
+.border-effect .left { /* Left border */
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+}
+
+.border-effect::after { /* Bottom border */
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.img-container:hover .border-effect::before {
+    width: 100%; /* Slide top border from left to right */
+}
+
+.img-container:hover .border-effect::after {
+    width: 100%; /* Slide bottom border from left to right */
+}
+
+.img-container:hover .border-effect .left {
+    height: 100%; /* Slide left border from top to bottom */
+}
+
+.img-container:hover .border-effect .right {
+    height: 100%; /* Slide right border from top to bottom */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .img-container {
+        max-height: 400px;
+    }
+
+    .col-md-6 {
+        margin-bottom: 30px;
+    }
+
+    .display-2 {
+        font-size: 3rem;  /* Adjust the font size for medium screens */
+    }
+
+    .mb-3 {
+        font-size: 1.2rem;
+    }
+
+    .h5 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .img-container {
+        max-height: 350px;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;  /* Further reduce font size for smaller screens */
+    }
+
+    .h5 {
+        font-size: 1rem;  /* Smaller subheading */
+    }
+
+    .mb-3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .col-md-6 {
+        padding: 0 15px;
+    }
+
+    .img-container {
+        max-height: 300px;
+    }
+
+    .header h1 {
+        font-size: 2rem;  /* Adjust font size for smaller screens */
+    }
+
+    .h5 {
+        font-size: 0.9rem;  /* Adjust smaller font size */
+    }
+
+    .mb-3 {
+        font-size: 1rem;
+    }
+}
+
+
+  /* ------------------------------------------------------------------------- */
+.service-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px;
+  }
+  
+
+/* ------------------------------------------------------ */
+.logos img {
+    width: 100%; /* Full width of the column */
+    height: 100%; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    border-radius: 8px; /* Optional: adds rounded corners to images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.logos img:hover {
+    transform: scale(1.1); /* Zoom in the image on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker and more prominent shadow on hover */
+}
+
+/* Ensure images are equally sized and centered */
+.col-md-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make sure the images take the full width and adjust for smaller screen sizes */
+@media (max-width: 768px) {
+    .col-6 {
+        /* On smaller screens, each image takes half the width */
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-6 {
+        /* On very small screens, each image takes full width */
+        flex: 0 0 100%;
+    }
+
+    .logos img {
+        max-height: 150px; /* Reduce the image height on very small screens */
+    }
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+  
+footer {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 40px 0; /* Add padding */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
+}
+footer h5 {
+    font-weight: bold; /* Bold headings */
+}
+footer p {
+    font-size: 1rem; /* Increase font size */
+}
+footer .btn {
+    margin-top: 10px; /* Add margin to buttons */
+}
+footer .btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+}
+footer .btn-outline-primary {
+    border-color: #007bff; /* Outline button border color */
+    color: #007bff; /* Outline button text color */
+}
+footer .btn-outline-primary:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+footer a {
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+footer a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+/* ---------------------------------------------------------------------------- */
+
+/* Container for the button */
+.scroll-to-top-container {
+    position: fixed;
+    right: 20px;   /* Position from the right side */
+    bottom: 20px;  /* Position from the bottom */
+    z-index: 9999; /* Ensure it's on top of other elements */
+}
+
+/* Style for the button */
+.scroll-to-top-btn {
+    background-color: #007bff; /* Button background color */
+    color: white;              /* Icon color */
+    border-radius: 50%;        /* Circle shape */
+    width: 50px;               /* Width of the circle */
+    height: 50px;              /* Height of the circle */
+    display: flex;             /* Center the icon */
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    font-size: 24px;           /* Icon size */
+    cursor: pointer;          /* Change cursor to pointer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect for button */
+.scroll-to-top-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional - Icon inside button */
+.scroll-to-top-btn i {
+    font-size: 24px;  /* Adjust icon size if needed */
+}
+

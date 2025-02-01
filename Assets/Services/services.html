@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <a class="navbar-brand" href="/index.html">
+      <img src="../logo/vecteezy_stethoscope-and-shield-logo-healthcare_24595798.png" alt="Logo" class="img-fluid"
+        style="max-width: 120px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-dark fw-bold" href="/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="../about/about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="services.html">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-dark fw-bold" href="../department/department.html"
+            id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+            Departments
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item text-dark fw-bold"
+                href="../department/department.html#cardiology">Cardiology</a></li>
+            <li><a class="dropdown-item text-dark fw-bold" href="../department/department.html#neurology">Neurology</a>
+            </li>
+            <li><a class="dropdown-item text-dark fw-bold"
+                href="../department/department.html#orthopedics">Orthopedics</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" href="/contact.html">Contact</a>
+        </li>
+      </ul>
+      <button class="btn btn-primary my-2 my-sm-0 ms-2" type="button">
+        <a href="#" class="text-white text-decoration-none fw-bold" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">BOOK AN AMBULANCE</a>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-------------------------------------------- Modal  ------------------------------------------------->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ambulance Application Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="ambulanceForm" class="container" onsubmit="return validateForm()">
+            <div class="mb-3">
+              <label for="ApplicantName" class="form-label">Applicant's name: </label>
+              <input type="text" class="form-control" id="ApplicantName" aria-describedby="nameHelp"
+                placeholder="Enter Full name">
+              <div id="nameError" class="text-danger" style="display: none;">Please enter a valid name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+              <div id="phoneError" class="text-danger" style="display: none;">Please enter a valid phone number.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="ambulanceType" class="form-label">Are you requesting single or multiple ambulances?</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ambulanceType" id="singleAmbulance">
+                <label class="form-check-label" for="singleAmbulance">Single</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ambulanceType" id="multipleAmbulance">
+                <label class="form-check-label" for="multipleAmbulance">Multiple</label>
+              </div>
+              <div id="ambulanceTypeError" class="text-danger" style="display: none;">Please select whether you need a
+                single or multiple ambulances.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="medicallyRisky" class="form-label">Will there be any medically risky group of people?</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="medicallyRisky" id="yesRisky">
+                <label class="form-check-label" for="yesRisky">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="medicallyRisky" id="noRisky">
+                <label class="form-check-label" for="noRisky">No</label>
+              </div>
+              <div id="medicallyRiskyError" class="text-danger" style="display: none;">Please select if there will be
+                any medically risky group of people.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- ---------------------------------------------------- -->
+
+  <section class="container-fluid" style="background-color: #153e35; padding: 90px 0;">
+    <div class="container header"
+      style="margin: 0 auto; max-width: 1355px; padding-left: 24px; padding-right: 24px; width: 100%;">
+      <h5 class="h5 text-light mb-3">Service</h5>
+      <h1 class="display-2 text-light fw-bold" style="font-family: 'Playfair Display', serif;">We build trust. Not just
+        websites.</h1>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------------- -->
+
+
+  <section class="container-fluid py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-6 para">
+          <h2 class="mb-3"
+            style="font-family: 'Playfair Display', serif; color: #153e35; font-size: 4.5rem; font-weight: 700;">Our
+            Commitment to Care</h2>
+          <p class="mb-3" style="color: #789904; font-size: 1.5rem; font-weight: 800; margin: 1rem 0;">Delivering
+            Exceptional Health Services with Compassion</p>
+          <p class="mb-4">At Medical HealthCare, we believe that every patient deserves access to the highest quality
+            care. Our team of medical experts is committed to providing comprehensive treatments and services with a
+            compassionate approach to ensure your well-being at every step of your journey.</p>
+
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              Patient-Centered Care
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              Advanced Diagnostic Services
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              Specialized Surgical Procedures
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              On-Site Pharmacy Services
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              Telemedicine & Virtual Consultations
+            </li>
+            <li class="d-flex align-items-center mb-3">
+              <i class="fa fa-check-circle text-success me-3" style="font-size: 22px;"></i>
+              Rehabilitation & Recovery Programs
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <div class="img-container" style="position: relative; overflow: hidden; width: 100%; max-height: 500px;">
+            <img src="../image/Services/premium_photo-1664303506610-f80b16db0c3d.avif" alt="Image" class="img-fluid"
+              style="border-top-right-radius: 25px; border-bottom-left-radius: 25px; width: 100%; object-fit: cover; height: auto;">
+            <div class="border-effect"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ---------------------------------------------------------------------------------------- -->
+
+
+  <section class="container-fluid py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row">
+
+        <!-- left Column -->
+        <div class="col-md-6">
+          <div class="img-container" style="position: relative; overflow: hidden;">
+            <video class="img-fluid"
+              style="border-top-right-radius: 25px; border-bottom-left-radius: 25px; width: 90%; height: 600px; object-fit: cover;"
+              autoplay muted loop>
+              <source src="../video/6130551-hd_1280_720_30fps.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="border-effect"></div>
+          </div>
+        </div>
+
+
+        <!-- right Column -->
+        <div class="col-md-6 ps-5 para2">
+          <h2 class="mb-3"
+            style="font-family: 'Playfair Display', serif; color: #153e35; font-size: 4.5rem; font-weight: 700;">Our
+            Healthcare Services</h2>
+          <p class="mb-3" style="color: #789904; font-size: 1.5rem; font-weight: 800; margin: 1rem 0;">Providing
+            Compassionate Care for All Your Health Needs</p>
+          <p class="mb-4">At Medical HealthCare, we offer a wide range of services to help you maintain your health and
+            well-being. Our expert medical team is dedicated to providing personalized care with the latest advancements
+            in healthcare technology.</p>
+
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              General Medicine & Health Checkups
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Emergency & Trauma Care
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Maternity & Obstetrics Services
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Surgery & Post-Surgical Care
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Pediatrics & Childcare
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Cardiology & Heart Care
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Oncology & Cancer Care
+            </li>
+            <li class="d-flex align-items-center mb-2">
+              <i class="fa fa-check-circle text-success me-2" style="font-size: 20px;"></i>
+              Rehabilitation & Physical Therapy
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Our Services</h1>
+    <div class="row g-4">
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/b015141a-3dcf-4fd1-acf6-ad758d9bf8de.jpeg" alt="Service 1" class="mb-3">
+            <h5 class="card-title">Emergency Care</h5>
+            <p class="card-text">24/7 emergency services with top medical professionals and advanced technology.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emergencyCareModal">Read
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Emergency Care -->
+      <div class="modal fade" id="emergencyCareModal" tabindex="-1" aria-labelledby="emergencyCareModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="emergencyCareModalLabel">Emergency Care</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Emergency Care</strong> service is available 24/7 to provide immediate medical attention in
+                critical situations. We are equipped with state-of-the-art facilities and a team of experienced
+                professionals ready to respond swiftly to any emergency. Whether it’s an accident, sudden illness, or
+                urgent medical need, we ensure timely care with the highest standards of treatment.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>24/7 Availability:</strong> Always ready to respond to emergencies, day or night.</li>
+                <li><strong>Experienced Medical Team:</strong> Skilled doctors, nurses, and medical professionals
+                  providing immediate care.</li>
+                <li><strong>Advanced Technology:</strong> Access to modern diagnostic tools and equipment for quick
+                  assessments.</li>
+                <li><strong>Comprehensive Emergency Services:</strong> From trauma care to cardiac support and
+                  respiratory issues, we cover all types of emergencies.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Fast and efficient care in critical moments.</li>
+                <li>Equipped with life-saving technologies.</li>
+                <li>A compassionate team that prioritizes your well-being.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/9acffe7f-9a94-4904-ad9a-313861dd4c57.png" alt="Service 2" class="mb-3">
+            <h5 class="card-title">Pediatrics</h5>
+            <p class="card-text">Comprehensive care for children, from newborns to teenagers.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pediatricsModal">Read More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal for Pediatrics -->
+      <div class="modal fade" id="pediatricsModal" tabindex="-1" aria-labelledby="pediatricsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pediatricsModalLabel">Pediatrics</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Pediatrics</strong> service is dedicated to providing comprehensive care for children, from
+                newborns to teenagers. Our team of expert pediatricians is committed to ensuring the health and
+                well-being of your child through regular checkups, preventive care, and treatment of common illnesses.
+                We offer a child-friendly environment designed to make every visit comfortable for both children and
+                their families.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Newborn to Teen Care:</strong> Specialized care for children of all ages, from birth through
+                  adolescence.</li>
+                <li><strong>Routine Checkups and Vaccinations:</strong> Ensuring your child’s health with regular
+                  checkups, growth monitoring, and necessary vaccinations.</li>
+                <li><strong>Treatment for Common Illnesses:</strong> Expert care for conditions like cold, flu,
+                  infections, and more.</li>
+                <li><strong>Child-Friendly Environment:</strong> A warm, welcoming atmosphere to help children feel at
+                  ease during visits.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Highly experienced pediatricians who prioritize the unique needs of children.</li>
+                <li>Access to modern medical technology and child-focused treatments.</li>
+                <li>Compassionate care that builds trust and comfort for both parents and children.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/4df30664-0335-4855-afe6-813e8da46779.png" alt="Service 3" class="mb-3">
+            <h5 class="card-title">Surgery</h5>
+            <p class="card-text">State-of-the-art surgical facilities for a wide range of procedures.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SurgeryModal">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Surgery -->
+      <div class="modal fade" id="SurgeryModal" tabindex="-1" aria-labelledby="SurgeryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="SurgeryModalLabel">Surgery</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Surgery</strong> service offers a wide range of advanced surgical procedures, performed by
+                highly skilled surgeons in state-of-the-art facilities. From minor surgeries to complex operations, we
+                provide the highest quality of care to ensure successful outcomes. We also offer pre-operative
+                consultations and post-operative care to ensure your recovery is as smooth and quick as possible.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Wide Range of Surgical Services:</strong> From elective surgeries to emergency procedures,
+                  we cover a broad spectrum of needs.</li>
+                <li><strong>Expert Surgeons:</strong> Highly qualified and experienced surgeons specializing in various
+                  disciplines.</li>
+                <li><strong>Advanced Surgical Facilities:</strong> Equipped with the latest technology and equipment to
+                  ensure precision and safety during surgery.</li>
+                <li><strong>Comprehensive Care:</strong> Pre-surgical consultations, advanced procedures, and
+                  post-operative support to ensure the best possible outcomes.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Compassionate care before, during, and after your surgery.</li>
+                <li>Modern surgical techniques for faster recovery and minimal complications.</li>
+                <li>Dedicated team that prioritizes your comfort and safety throughout the process.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Service 4 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/istockphoto-1330516326-612x612.jpg" alt="Sleep Medicine" class="mb-3">
+            <h5 class="card-title">Sleep Medicine Clinic</h5>
+            <p class="card-text">Expert care for sleep disorders to improve your quality of life.</p>
+            <button class="btn btn-primary more-info" data-bs-toggle="modal" data-bs-target="#SleepMedicineModal"
+              data-service="Sleep Medicine Clinic">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="SleepMedicineModal" tabindex="-1" aria-labelledby="SleepMedicineModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="SleepMedicineModalLabel">Sleep Medicine Clinic</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Sleep Medicine Clinic</strong> offers expert care for individuals suffering from sleep
+                disorders, including insomnia, sleep apnea, and other related conditions. We are dedicated to improving
+                your quality of life by diagnosing and treating sleep-related issues. Through comprehensive assessments
+                and personalized treatment plans, we help you achieve better sleep and overall health.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Comprehensive Sleep Assessments:</strong> Thorough evaluations to diagnose the root causes
+                  of sleep disorders.</li>
+                <li><strong>Treatment for Sleep Apnea, Insomnia, and More:</strong> Offering effective treatments for a
+                  variety of sleep-related issues.</li>
+                <li><strong>Advanced Sleep Studies:</strong> In-clinic sleep studies and home-based monitoring to
+                  evaluate sleep patterns.</li>
+                <li><strong>Personalized Treatment Plans:</strong> Tailored treatments, including behavioral therapy,
+                  medication, and CPAP therapy.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Expert sleep specialists focused on providing effective solutions to improve your sleep.</li>
+                <li>A holistic approach that addresses both physical and mental health aspects of sleep.</li>
+                <li>Access to the latest technology and treatments to help you achieve better sleep quality.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/istockphoto-1402396919-612x612.jpg" alt="Sports Medicine" class="mb-3">
+            <h5 class="card-title">Sports Medicine & Fitness Rehabilitation</h5>
+            <p class="card-text">Injury prevention and recovery programs for athletes and active individuals.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SportsModal">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="SportsModal" tabindex="-1" aria-labelledby="SportsModallLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="SportsModallLabel">Sports Medicine & Fitness Rehabilitation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Sports Medicine & Fitness Rehabilitation</strong> service is designed to help athletes and
+                active individuals recover from injuries, prevent future injuries, and improve their overall fitness.
+                Whether you are recovering from a sports-related injury or looking to enhance your performance, our team
+                of specialists provides personalized care and rehabilitation programs tailored to your specific needs.
+              </p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Injury Prevention and Recovery Programs:</strong> Specialized programs to help you recover
+                  from sports injuries and prevent future occurrences.</li>
+                <li><strong>Personalized Rehabilitation Plans:</strong> Tailored rehabilitation programs designed for
+                  athletes of all levels, from amateurs to professionals.</li>
+                <li><strong>State-of-the-Art Equipment:</strong> Access to advanced rehabilitation tools and technology
+                  to support faster recovery.</li>
+                <li><strong>Expert Sports Medicine Specialists:</strong> Team of professionals with expertise in
+                  treating sports-related injuries and improving physical performance.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Comprehensive care that focuses on both recovery and performance enhancement.</li>
+                <li>Experienced team with a deep understanding of sports injuries and rehabilitation.</li>
+                <li>Cutting-edge rehabilitation techniques to ensure a quick and safe return to your active lifestyle.
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/istockphoto-648181930-612x612.jpg" alt="Cancer Care" class="mb-3">
+            <h5 class="card-title">Cancer Care & Oncology</h5>
+            <p class="card-text">Specialized treatment for all types of cancer with compassionate care.</p>
+            <button class="btn btn-primary more-info" data-bs-toggle="modal" data-bs-target="#CancerModal"
+              data-service="Cancer Care & Oncology">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="CancerModal" tabindex="-1" aria-labelledby="CancerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="CancerModalLabel">Cancer Care & Oncology</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Cancer Care & Oncology</strong> service provides specialized treatment for all types of
+                cancer, focusing on delivering the best possible care at every stage of your journey. From diagnosis to
+                treatment and beyond, our compassionate team of oncologists, nurses, and support staff work together to
+                provide individualized care and advanced treatment options, including chemotherapy, radiation,
+                immunotherapy, and more.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Comprehensive Cancer Diagnosis:</strong> Early and accurate diagnosis with the latest
+                  screening tools and tests.</li>
+                <li><strong>Personalized Treatment Plans:</strong> Tailored cancer treatment based on the type, stage,
+                  and individual needs of the patient.</li>
+                <li><strong>Advanced Treatment Options:</strong> Access to the latest chemotherapy, radiation,
+                  immunotherapy, and targeted therapies.</li>
+                <li><strong>Supportive Care Services:</strong> Counseling, pain management, and emotional support
+                  throughout the treatment process.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Dedicated oncologists who specialize in treating a variety of cancers.</li>
+                <li>Access to the latest technology and treatment methods for optimal outcomes.</li>
+                <li>A compassionate team that provides emotional, psychological, and physical support throughout your
+                  cancer journey.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Service 7 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/premium_photo-1664303506610-f80b16db0c3d.avif" alt="Radiology" class="mb-3">
+            <h5 class="card-title">Radiology & Imaging</h5>
+            <p class="card-text">State-of-the-art imaging services for accurate and early diagnosis.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RadiologyModal">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="RadiologyModal" tabindex="-1" aria-labelledby="RadiologyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="RadiologyModalLabel">Radiology & Imaging</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Radiology & Imaging</strong> service provides state-of-the-art imaging solutions for
+                accurate diagnosis and early detection of various medical conditions. From routine X-rays to advanced
+                MRI, CT scans, and ultrasound, our expert radiologists use cutting-edge technology to ensure precise
+                results, helping doctors develop the most effective treatment plans.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Advanced Imaging Technologies:</strong> Access to the latest MRI, CT, X-ray, ultrasound, and
+                  fluoroscopy services.</li>
+                <li><strong>Fast and Accurate Results:</strong> Quick turnaround time for results to ensure timely
+                  diagnosis and treatment.</li>
+                <li><strong>Comprehensive Diagnostics:</strong> Imaging for a wide range of medical conditions, from
+                  bone fractures to complex soft tissue issues.</li>
+                <li><strong>Non-Invasive Procedures:</strong> Safe and comfortable imaging techniques that require
+                  minimal patient preparation.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Highly trained radiologists who specialize in interpreting diagnostic images.</li>
+                <li>Utilization of the latest imaging technology to provide high-quality, clear images.</li>
+                <li>Comfortable and patient-centered care to ensure a stress-free experience.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 8 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/240_F_1060789194_8UlfURBfBEy2ZE0yfpzpnU8nkR6KK46i.jpg" alt="Maternity"
+              class="mb-3">
+            <h5 class="card-title">Maternity & Obstetrics</h5>
+            <p class="card-text">Holistic care for mothers and newborns from experts in women’s health.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#MaternityModal">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="MaternityModal" tabindex="-1" aria-labelledby="MaternityModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="MaternityModalLabel">Maternity & Obstetrics</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Maternity & Obstetrics</strong> service provides comprehensive care for mothers and
+                newborns, ensuring a smooth and healthy journey throughout pregnancy, childbirth, and beyond. From
+                prenatal care to post-delivery support, our team of specialists offers personalized care for every
+                stage, focusing on the well-being of both the mother and child.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Prenatal Care:</strong> Comprehensive check-ups, screenings, and counseling to ensure the
+                  health of both mother and baby.</li>
+                <li><strong>Labor & Delivery Support:</strong> Expert care during labor and delivery, including pain
+                  management, safe delivery, and immediate newborn care.</li>
+                <li><strong>Postpartum Care:</strong> Emotional and physical support for new mothers, including
+                  breastfeeding guidance, postpartum checkups, and recovery assistance.</li>
+                <li><strong>Specialized Care for High-Risk Pregnancies:</strong> Tailored care for high-risk pregnancies
+                  with a focus on safety and well-being for both mother and child.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Experienced obstetricians and gynecologists who specialize in maternal and newborn care.</li>
+                <li>Personalized birthing plans that cater to the needs and preferences of the mother.</li>
+                <li>A compassionate team that provides emotional support and guidance throughout the pregnancy journey.
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 9 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/pexels-photo-1640777.jpeg" alt="Nutrition" class="mb-3">
+            <h5 class="card-title">Nutrition & Dietetics</h5>
+            <p class="card-text">Tailored diet plans and consultations for a healthier lifestyle.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#NutritionModal">Read More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="NutritionModal" tabindex="-1" aria-labelledby="NutritionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="NutritionModalLabel">Nutrition & Dietetics</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Nutrition & Dietetics</strong> service focuses on promoting healthy eating habits and
+                providing personalized dietary plans to support overall health and well-being. Whether you're looking to
+                manage a chronic condition, lose weight, or simply adopt a healthier lifestyle, our expert dietitians
+                offer evidence-based guidance to help you make informed choices about food and nutrition.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Personalized Nutrition Plans:</strong> Tailored meal plans to meet your specific health
+                  goals, whether it's weight management, disease prevention, or improving overall health.</li>
+                <li><strong>Chronic Disease Management:</strong> Specialized nutrition therapy for conditions like
+                  diabetes, hypertension, heart disease, and digestive disorders.</li>
+                <li><strong>Nutritional Counseling:</strong> One-on-one consultations to address your unique nutritional
+                  needs, food preferences, and lifestyle.</li>
+                <li><strong>Nutrition Education:</strong> Workshops, seminars, and resources to empower you with the
+                  knowledge to make healthier food choices.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Expert dietitians with extensive training in nutrition therapy and diet planning.</li>
+                <li>Evidence-based nutrition recommendations designed to achieve long-term health goals.</li>
+                <li>A holistic approach that considers not just the food you eat, but your lifestyle, culture, and
+                  personal preferences.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 10 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/pexels-photo-7195078.webp" alt="Telemedicine" class="mb-3">
+            <h5 class="card-title">Telemedicine Services</h5>
+            <p class="card-text">Access healthcare anytime, anywhere with our teleconsultation platform.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TelemedicineServicesModal">Read
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="TelemedicineServicesModal" tabindex="-1"
+        aria-labelledby="TelemedicineServicesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="TelemedicineServicesModalLabel">Telemedicine Services</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Telemedicine Services</strong> provide convenient, remote access to healthcare from the
+                comfort of your home. With our secure online platform, you can consult with healthcare professionals,
+                receive expert advice, get prescriptions, and manage your health without having to visit the clinic in
+                person.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Remote Consultations:</strong> Video calls, phone consultations, and online chat options for
+                  easy communication with your healthcare provider.</li>
+                <li><strong>Prescription Services:</strong> Receive digital prescriptions that can be sent directly to
+                  your preferred pharmacy.</li>
+                <li><strong>Follow-Up Appointments:</strong> Schedule follow-up consultations to monitor your progress
+                  and adjust treatment plans as needed.</li>
+                <li><strong>Convenience and Accessibility:</strong> Access healthcare services at any time, reducing the
+                  need for in-person visits, especially for non-emergency health concerns.</li>
+                <li><strong>Confidential and Secure:</strong> All consultations and patient information are kept private
+                  with secure, HIPAA-compliant technology.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Access healthcare professionals anytime, anywhere, without the need for travel.</li>
+                <li>Convenient for routine check-ups, minor illnesses, medication reviews, and mental health support.
+                </li>
+                <li>Easy-to-use platform with user-friendly features for a smooth healthcare experience.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 11 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/pexels-photo-7653133.jpeg" alt="Home Healthcare" class="mb-3">
+            <h5 class="card-title">Home Healthcare</h5>
+            <p class="card-text">Receive personalized healthcare services in the comfort of your home.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#HomeHealthcareModal">Read
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Sleep Medicine Clinic -->
+      <div class="modal fade" id="HomeHealthcareModal" tabindex="-1" aria-labelledby="HomeHealthcareModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="HomeHealthcareModalLabel">Home Healthcare</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Home Healthcare</strong> service brings expert medical care directly to your home. Whether
+                you need post-surgery care, assistance with chronic illnesses, or recovery support, we provide
+                compassionate, personalized healthcare services in the comfort of your own home. Our team of experienced
+                healthcare professionals is dedicated to delivering high-quality care tailored to your needs.</p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Post-Surgery Care:</strong> Support for patients recovering from surgeries, including wound
+                  care, medication management, and physical rehabilitation.</li>
+                <li><strong>Chronic Disease Management:</strong> Ongoing care for individuals with conditions such as
+                  diabetes, hypertension, and heart disease, ensuring their health is managed effectively.</li>
+                <li><strong>Nursing Services:</strong> Professional nursing care at home for various medical needs,
+                  including injections, monitoring vital signs, and administering prescribed treatments.</li>
+                <li><strong>Physical Therapy:</strong> Personalized physical therapy to help you regain mobility and
+                  strength following an injury or surgery.</li>
+                <li><strong>Palliative Care:</strong> Compassionate care designed to improve the quality of life for
+                  individuals with serious or terminal conditions, focusing on comfort and symptom management.</li>
+                <li><strong>24/7 Availability:</strong> Our services are available round-the-clock, ensuring that you
+                  have access to medical help whenever you need it.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li>Professional, compassionate care from licensed healthcare providers.</li>
+                <li>Personalized treatment plans tailored to your unique needs and preferences.</li>
+                <li>Convenient, in-home visits that eliminate the need for travel to healthcare facilities.</li>
+                <li>Comprehensive care that includes physical therapy, nursing, and chronic disease management.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 12 -->
+      <div class="col-md-4">
+        <div class="card service-card text-center">
+          <div class="card-body">
+            <img src="../image/Services/pexels-photo-5214998.jpeg" alt="Health Checkup" class="mb-3">
+            <h5 class="card-title">Health Checkup Packages</h5>
+            <p class="card-text">Comprehensive health screening for early detection and prevention.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#HealthCheckupModal">Read
+              More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Health Checkup -->
+      <div class="modal fade" id="HealthCheckupModal" tabindex="-1" aria-labelledby="HealthCheckupModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="HealthCheckupModalLabel">Health Checkup Packages</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Our <strong>Health Checkup Packages</strong> are designed to help you monitor and maintain your health
+                with regular screenings and tests. Early detection of health issues can lead to better treatment
+                outcomes, and our comprehensive checkup packages are tailored to meet the needs of individuals at every
+                stage of life. We offer a wide range of diagnostic tests to give you peace of mind about your health.
+              </p>
+
+              <h6>Key Features:</h6>
+              <ul>
+                <li><strong>Comprehensive Health Screening:</strong> Full-body health checks that include blood tests,
+                  ECG, X-rays, and other diagnostic procedures to detect underlying health issues.</li>
+                <li><strong>Tailored Packages:</strong> Custom packages based on age, gender, lifestyle, and medical
+                  history to ensure the most relevant tests are included.</li>
+                <li><strong>Preventive Care:</strong> Focus on prevention by identifying risk factors for chronic
+                  diseases such as diabetes, hypertension, and heart disease.</li>
+                <li><strong>Expert Medical Consultation:</strong> After completing the tests, you’ll have a consultation
+                  with our healthcare professionals to discuss your results and create a personalized health plan.</li>
+                <li><strong>Convenient Location and Timing:</strong> Flexible appointment slots and locations, ensuring
+                  you can get your health checkups done at your convenience.</li>
+                <li><strong>Quick Turnaround:</strong> Results available within 24-48 hours, enabling you to act swiftly
+                  if needed.</li>
+              </ul>
+
+              <h6>Why Choose Us:</h6>
+              <ul>
+                <li><strong>Early Detection:</strong> Timely checkups can detect potential health issues before they
+                  become serious.</li>
+                <li><strong>Personalized Packages:</strong> Get a health checkup plan specifically suited to your age,
+                  gender, and health concerns.</li>
+                <li><strong>Affordable Options:</strong> We offer competitive prices for a range of checkup packages to
+                  make preventive healthcare accessible.</li>
+                <li><strong>Expert Care:</strong> Receive professional guidance and health advice based on your checkup
+                  results.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- -------------------------------------------------------------------------------------- -->
+
+  <div class="container-fluid p-5" style="background-color: #f8f9fa;">
+    <h2 class="text-center mb-4">Our Organizations</h2> <!-- Heading for Organizations -->
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_120795192_ldB1JlIeALiuo2jHfQ7Js0FgWmfFI27t.jpg" alt="Brand 1"
+          class="img-fluid">
+      </div>
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_241082104_mSQTy699IyWXp1RWhubd8RdhnUedTi65.jpg" alt="Brand 2"
+          class="img-fluid">
+      </div>
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_258247402_2oedwoIlHN3bp72qNjJhKP79GSOBXujQ.jpg" alt="Brand 3"
+          class="img-fluid">
+      </div>
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_624278199_QtcnHatCcFOfCzjlvR662te8wGrnA1I5.jpg" alt="Brand 4"
+          class="img-fluid">
+      </div>
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_120795192_ldB1JlIeALiuo2jHfQ7Js0FgWmfFI27t.jpg" alt="Brand 1"
+          class="img-fluid">
+      </div>
+      <div class="col-6 col-md-2 mb-4 logos">
+        <img src="/Assets/image/Services/logoss/240_F_476124067_2NNviUBvVbYoh3MdRHIsRFylSTFmAUHx.jpg" alt="Brand 6"
+          class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+
+  <!--------------------------------------------- Footer ------------------------------------------------->
+
+  <footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Hospital</h5>
+          <p>
+            Providing exceptional healthcare services with compassion and care.
+          </p>
+          <a class="btn btn-primary mt-2" href="/contact.html">Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Quick Links</h5>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="/index.html" class="text-dark">Home</a>
+            </li>
+            <li>
+              <a href="../about/about.html" class="text-dark">About Us</a>
+            </li>
+            <li>
+              <a href="../department/department.html" class="text-dark">Department</a>
+            </li>
+            <li>
+              <a href="/contact.html" class="text-dark">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact Information</h5>
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="mailto:kushwahamonika26@gmail.com" class="text-dark">Email:kushwahamonika26@gmail.com</a>
+            </li>
+            <li>
+              <a href="tel:+7011128675" class="text-dark">Phone:7011128675</a>
+            </li>
+            <li>
+              <a href="#" class="text-dark">Address: faridabad , Haryana</a>
+            </li>
+          </ul>
+          <div class="mt-3">
+            <a class="btn btn-outline-primary" href="mailto:kushwahamonika26@gmail.com?subject=Hello!">Email Us</a>
+            <a class="btn btn-outline-primary" href="tel:+917011128675">Call Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3 bg-dark text-white">
+      By Monika © 2025 Hospital. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ------------------------------------------------------------------------------------------ -->
+
+  <!-- Floating button container -->
+  <div class="scroll-to-top-container">
+    <div class="scroll-to-top-btn" id="scrollToTopBtn">
+      <i class="fa fa-arrow-up"></i> <!-- Icon for scroll up -->
+    </div>
+  </div>
+
+  <!-- -------------------------------------------------------------------------------- -->
+
+
+  <script src="services.js"></script>
+  <script src="../css/bootstrap.bundle.min.js"></script>
+  <script src="../jquery/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+</body>
+
+</html>

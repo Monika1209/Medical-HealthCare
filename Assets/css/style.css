@@ -1,0 +1,836 @@
+/* Modal Styling */
+.healthcare-modal-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%; /* Increased width to 90% */
+    max-width: 1100px; /* Set max-width to 900px */
+    height: auto; /* Auto height */
+    max-height: 400px; /* Limit maximum height */
+    overflow-y: auto; /* Scroll if content exceeds max height */
+  }
+
+  .healthcare-modal-header {
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px; /* Reduced padding for a smaller header */
+    border-radius: 10px 10px 0 0;
+  }
+
+  .healthcare-modal-title {
+    font-size: 1.6rem; /* Slightly larger title */
+  }
+
+  .healthcare-modal-body {
+    padding: 15px 25px; /* Reduced padding to decrease height */
+    font-size: 1.1rem;
+    color: #555;
+    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+  }
+
+  .healthcare-modal-footer {
+    padding: 12px 25px; /* Reduced padding to decrease height */
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .healthcare-modal-footer .healthcare-btn {
+    background-color: #003366;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    padding: 8px 15px; /* Reduced button padding */
+  }
+
+  .healthcare-modal-footer .healthcare-btn:hover {
+    background-color: #00509e;
+  }
+
+  .healthcare-link {
+    color: #003366;
+    text-decoration: none;
+  }
+
+  .healthcare-link:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------------------------------------------------------------------------- */
+
+
+.navbar {
+    background-color: #f8f9fa; /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
+    padding: 10px 20px; /* Add padding */
+    position: fixed; /* Fix navbar on top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Optionally, add smooth transition */
+.dropdown-menu {
+    display: none;
+    transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 60px; /* Adjust logo height */
+    width: 80px; /* Adjust logo width */
+    object-fit: cover; /* Ensure the image covers the container */
+    margin-left: 50px; /* Move logo a little to the left */
+}
+.navbar-nav {
+    margin: 0 auto; /* Center the menu */
+}
+.navbar-nav .nav-item {
+    margin: 0 10px; /* Add some spacing between menu items */
+}
+.navbar-nav .nav-link {
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar-nav  .nav-link:hover {
+    color: #28a745 !important;
+}
+
+.btn-book-ambulance {
+    background-color: #28a745; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add padding */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.btn-book-ambulance:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    margin-top: 0; /* Adjust this if needed */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #28a745 !important; /* Green color on hover */
+}
+
+.dropdown-menu .dropdown-item {
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    font-weight: bold !important; /* Bold text */
+}
+
+
+/* ---------------------  Appointment form validation  --------------------------------- */
+
+/* General Form Styles */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs */
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus Effect for Inputs */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Radio Button Styles */
+.form-check-label {
+    font-size: 1rem;
+    padding-left: 5px;
+}
+
+.form-check-input {
+    margin-top: 0.3rem;
+}
+
+/* Error Message Styling */
+.text-danger {
+    font-size: 0.875rem;
+    color: red;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    form {
+        padding: 15px;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* ------------------------------------------------------ */
+.carousel-inner img {
+    height: 600px; /* Set your desired height */
+    object-fit: cover; /* Ensure the image covers the container */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background color to buttons */
+    border-radius: 50%; /* Optional: Make buttons circular */
+}
+
+.carousel-inner img {
+    animation: zoomEffect 5s infinite alternate ease-in-out;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+
+/* ------------------------------------------------------- */
+.main-box, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../image/hero_home_01.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.content {
+    color: white;
+    text-align: left;
+    width: 50%;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.icon-list li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-list li:hover{
+    transition: transform 0.6s ease;
+    transform: translateX(5px);
+    color: #b9b3b3;
+}
+
+.search-section {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.search-section p{
+    color: black;
+}
+.mini-image {
+    width: 20px;
+    height: 20px;
+}
+.form-select-lg {
+    border-radius: 0.25rem;
+    border: 2px solid #17a2b8;
+    margin-right: 40px;
+}
+.form-select-lg:focus {
+    border-color: #138496;
+    box-shadow: 0 0 0 0.2rem rgba(19, 132, 150, 0.25);
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-danger {
+    font-size: 0.875rem;
+    color: red;
+    margin-top: 5px;
+}
+
+.images img {
+    transition: transform 0.6s ease; /* Smooth animation */
+    transform-origin: center; /* Center point for flip */
+    border-radius: 8px; /* Optional */
+  }
+
+  .images img:hover {
+    transform: rotateY(180deg); /* Flip horizontally */
+  }
+
+@media (max-width: 768px) {
+    .overlay {
+        flex-direction: column;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .images {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .images img {
+        width: 100%;
+        height: auto;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-section select {
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------- Accordion----------------------------------------- */
+
+.accordion-button {
+    background-color: transparent !important; /* Ensure no background color */
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: black !important;
+}
+
+
+.accordion-button.collapsed {
+    background-color: transparent !important;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed):focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent !important;
+}
+
+.accordion-button.collapsed:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background-color: transparent !important;
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.accordion-item{
+    outline: 1px solid rgb(204, 202, 202) !important;
+    border: none !important;
+}
+
+
+/*------------------------------------- Accordion end -------------------------------------- */
+.custom-card {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stylish box-shadow */
+}
+
+.custom-card-img-container {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.custom-card img {
+    width: 100%;
+    height: 250px; /* Increased image height */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.custom-card-body {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)); /* Soft gradient background */
+    padding: 20px;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    z-index: 1;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.star-rating span {
+    color: orange;
+    font-size: 18px;
+}
+
+/* Hover effect for the card */
+.custom-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced box-shadow */
+}
+
+/* Hover effect on image */
+.custom-card:hover img {
+    transform: scale(1.1); /* Slight zoom effect on image */
+}
+
+/* Hover effect for card body background */
+.custom-card:hover .custom-card-body {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)); /* Slightly brighter on hover */
+}
+
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* Custom header with light blue background and increased height */
+.custom-header {
+    background-color: #008fc5; /* Light blue color */
+    padding: 70px 20px; /* Increased height by adding more padding */
+    text-align: center;
+    z-index: 1; /* Ensure header is on top */
+    color: white;
+}
+
+.custom-header h2 {
+    color: #fff;
+}
+
+/* Style the features section with Bootstrap grid */
+.custom-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: -80px; /* Pull the features section up */
+    padding: 20px;
+    z-index: 0;
+}
+
+/* Custom feature styling */
+.custom-feature {
+    position: relative;
+    width: 18%;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add overlay effect on hover */
+.custom-feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 143, 197, 0.6); /* Semi-transparent blue overlay */
+    transform: scale(0);
+    transform-origin: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.custom-feature:hover::before {
+    transform: scale(1);
+}
+
+/* Content inside the custom-feature */
+.custom-feature .custom-icon,
+.custom-feature h3 {
+    position: relative;
+    z-index: 1;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-feature:hover .custom-icon,
+.custom-feature:hover h3 {
+    color: white;
+}
+
+/* Feature icons */
+.custom-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .custom-feature {
+        width: 45%;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+
+
+.blog-section {
+    background-color: #f8fbfd; /* Light blue background */
+    border: 1px solid #e0e0e0; /* Soft border */
+}
+
+/* Card Customizations */
+.card {
+    border: none; /* Remove default card border */
+    border-radius: 8px; /* Add rounded corners */
+    background-color: #ffffff; /* White background for cards */
+}
+
+/* Card Titles */
+.card-title {
+    color: #333; /* Darker text for title */
+    font-weight: bold;
+}
+
+/* Card Text */
+.card-text {
+    color: #555; /* Subtle text color */
+}
+
+/* Read More Button */
+.btn-primary {
+    background-color: #007bff; /* Bootstrap Primary Color */
+    border: none; /* No border on button */
+}
+
+/* Add subtle shadow to cards */
+.card.shadow-sm {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+.equal-height-container {
+    display: flex;
+    gap: 20px; /* Space between the sections */
+  }
+
+  .equal-height-item {
+    flex: 2; /* Make both sections take equal space */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .equal-height-item h1,
+  .equal-height-item h2 {
+    text-align: center;
+  }
+
+  /* Contact accordion */
+
+  .accordion-item2{
+    background-color: #e1e3e4;
+  }
+
+  .accordion-button{
+    font-weight: bold;
+  }
+
+
+
+/* --------------------------------------------------------------------------------------- */
+
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    background-color: #f8f9fa;
+  }
+  #chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  #chatbot-body {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  #chatbot-footer {
+    padding: 10px;
+  }
+  .chat-message {
+    margin: 5px 0;
+  }
+  .user-message {
+    text-align: right;
+  }
+  .user-message .message {
+    background-color: #007bff;
+    color: white;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+  .bot-message .message {
+    background-color: #e9ecef;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+  #chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  /* --------------------------------------------------------------------------------------- */
+
+
+  .social-icon {
+    position: fixed;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+  }
+  #whatsapp-icon {
+    top: 50%; /* Middle of the page */
+    transform: translateY(-50%);
+    background-color: #25d366;
+  }
+
+  #whatsapp-icon a{
+    text-decoration: none;
+    color: white;
+  }
+
+  #whatsapp-icon:hover {
+    background-color: #1da851;
+  }
+  #twitter-icon {
+    top: calc(50% + 70px); /* Just below WhatsApp */
+    transform: translateY(-50%);
+    background-color: #1da1f2;
+  }
+
+  #twitter-icon a{
+    text-decoration: none;
+    color: white;
+  }
+  #twitter-icon:hover {
+    background-color: #1a91da;
+  }
+
+  /* ----------------------------------------------------------------------------- */
+
+  .findUs {
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    padding: 0 20px 80px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+  }
+
+.faq{
+    background: linear-gradient(rgba(3, 59, 87, 0.888), black);
+    padding: 0 20px 80px 20px;
+    height: 450px;
+}
+
+
+/* ------------------------------------------------------------------------------ */
+
+footer {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 40px 0; /* Add padding */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
+}
+footer h5 {
+    font-weight: bold; /* Bold headings */
+}
+footer p {
+    font-size: 1rem; /* Increase font size */
+}
+footer .btn {
+    margin-top: 10px; /* Add margin to buttons */
+}
+footer .btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+}
+footer .btn-outline-primary {
+    border-color: #007bff; /* Outline button border color */
+    color: #007bff; /* Outline button text color */
+}
+footer .btn-outline-primary:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+footer a {
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+footer a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* ------------------------------------------------------------------------------------------- */
+
+
+/* Container for the button */
+.scroll-to-top-container {
+    position: fixed;
+    right: 20px;   /* Position from the right side */
+    bottom: 90px;  /* Position from the bottom */
+    z-index: 9999; /* Ensure it's on top of other elements */
+}
+
+/* Style for the button */
+.scroll-to-top-btn {
+    background-color: #007bff; /* Button background color */
+    color: white;              /* Icon color */
+    border-radius: 50%;        /* Circle shape */
+    width: 50px;               /* Width of the circle */
+    height: 50px;              /* Height of the circle */
+    display: flex;             /* Center the icon */
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    font-size: 24px;           /* Icon size */
+    cursor: pointer;          /* Change cursor to pointer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect for button */
+.scroll-to-top-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Optional - Icon inside button */
+.scroll-to-top-btn i {
+    font-size: 24px;  /* Adjust icon size if needed */
+}
+

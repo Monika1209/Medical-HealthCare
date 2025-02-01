@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./Assets/css/style.css">
+  <link href="./Assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<style>
+  .navbar {
+    background-color: #f8f9fa;
+    /* Light background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add some shadow for style */
+    padding: 10px 20px;
+    /* Add padding */
+    position: fixed;
+    /* Fix navbar on top */
+    width: 100%;
+    /* Full width */
+    z-index: 1000;
+    /* Ensure it stays on top */
+  }
+
+  /* Optionally, add smooth transition */
+  .dropdown-menu {
+    display: none;
+    transition: visibility 0.3s, opacity 0.3s ease;
+  }
+
+  .navbar-brand img {
+    height: 60px;
+    /* Adjust logo height */
+    width: 80px;
+    /* Adjust logo width */
+    object-fit: cover;
+    /* Ensure the image covers the container */
+    margin-left: 50px;
+    /* Move logo a little to the left */
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+    /* Center the menu */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+    /* Add some spacing between menu items */
+  }
+
+  .navbar-nav .nav-link {
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #28a745 !important;
+  }
+
+  .btn-book-ambulance {
+    background-color: #28a745;
+    /* Green background color */
+    color: white;
+    /* White text color */
+    border: none;
+    /* Remove border */
+    padding: 8px 16px;
+    /* Add padding */
+    border-radius: 4px;
+    /* Rounded corners */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
+  }
+
+  .btn-book-ambulance:hover {
+    background-color: #218838;
+    /* Darker green on hover */
+  }
+
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+    /* Adjust this if needed */
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    color: #28a745 !important;
+    /* Green color on hover */
+  }
+
+  .dropdown-menu .dropdown-item {
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+    font-weight: bold !important;
+    /* Bold text */
+  }
+
+  /* -------------------------------------------------------------------- */
+
+  @media (max-width: 768px) {
+    .container-fluid {
+      padding: 50px 10px !important;
+      /* Reduce padding for smaller screens */
+    }
+
+    .equal-height-container {
+      flex-direction: column;
+      /* Stack items vertically on smaller screens */
+    }
+
+    .equal-height-item {
+      width: 100%;
+      /* Ensure each section takes full width */
+      margin-bottom: 20px;
+      /* Add spacing between sections */
+    }
+
+    .accordion-body {
+      font-size: 15px;
+    }
+
+    .accordion-button {
+      font-size: 14px;
+      /* Reduce button text size for smaller screens */
+      padding: 10px;
+      /* Adjust padding */
+    }
+
+    .form-control,
+    .form-select {
+      font-size: 14px;
+      /* Adjust font size for smaller screens */
+      padding: 10px;
+      /* Adjust input padding */
+    }
+
+    .btn {
+      width: 100%;
+      /* Make the submit button full width on small screens */
+    }
+  }
+
+
+  /* ------------------------------------------------------------------ */
+
+  .findUs iframe {
+    max-width: 100%;
+    /* Makes the map responsive */
+    width: 100%;
+    /* Ensures it adapts to different screen sizes */
+    height: 400px;
+    /* Adjust height for better mobile view */
+  }
+
+  @media (max-width: 768px) {
+    .findUs iframe {
+      height: 300px;
+      /* Reduce height for smaller screens */
+    }
+  }
+
+  /* ---------------------------------------------------------------- */
+
+
+  .footer-background {
+    background-color: #f8f9fa;
+    /* Light background color */
+    padding: 40px 0;
+    /* Add padding */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    /* Add some shadow for style */
+  }
+
+  .footer-center {
+    text-align: center;
+  }
+
+  .footer-lg-start {
+    text-align: left;
+  }
+
+  .footer-container {
+    padding: 2rem;
+  }
+
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer-col-lg-6,
+  .footer-col-lg-3,
+  .footer-col-md-12,
+  .footer-col-md-6 {
+    flex: 1;
+  }
+
+  .footer-uppercase {
+    font-weight: bold;
+    /* Bold headings */
+  }
+
+  .footer-list-style {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-link-dark {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #333;
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+  }
+
+  .footer-link-dark:hover {
+    color: #007bff;
+    /* Change color on hover */
+  }
+
+  .footer-btn {
+    padding: 10px 15px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .footer-primary-button {
+    background-color: #007bff;
+    /* Primary button color */
+    color: white;
+    border: none;
+    /* Remove border */
+  }
+
+  .footer-primary-button:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+  }
+
+  .footer-outline-primary {
+    border-color: #007bff;
+    /* Outline button border color */
+    color: #007bff;
+    /* Outline button text color */
+  }
+
+  .footer-outline-primary:hover {
+    background-color: #007bff;
+    /* Change background color on hover */
+    color: white;
+    /* Change text color on hover */
+  }
+
+  .footer-padding-small {
+    padding: 15px 0;
+  }
+
+  .footer-margin-top {
+    margin-top: 10px;
+  }
+
+  .footer-margin-bottom {
+    margin-bottom: 20px;
+  }
+
+  .footer-margin-bottom-md {
+    margin-bottom: 0;
+  }
+
+  .footer-text-white {
+    color: white;
+  }
+
+  .footer-background-dark {
+    background-color: #343a40;
+  }
+
+  .footer-center-text {
+    text-align: center;
+  }
+
+  /* --------------------------------------------------------------------------------------------- */
+
+  /* Container for the button */
+  .scroll-to-top-container {
+    position: fixed;
+    right: 20px;
+    /* Position from the right side */
+    bottom: 20px;
+    /* Position from the bottom */
+    z-index: 9999;
+    /* Ensure it's on top of other elements */
+  }
+
+  /* Style for the button */
+  .scroll-to-top-btn {
+    background-color: #007bff;
+    /* Button background color */
+    color: white;
+    /* Icon color */
+    border-radius: 50%;
+    /* Circle shape */
+    width: 50px;
+    /* Width of the circle */
+    height: 50px;
+    /* Height of the circle */
+    display: flex;
+    /* Center the icon */
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+    /* Vertically center */
+    font-size: 24px;
+    /* Icon size */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Optional shadow */
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition */
+  }
+
+  /* Hover effect for button */
+  .scroll-to-top-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+  }
+
+  /* Optional - Icon inside button */
+  .scroll-to-top-btn i {
+    font-size: 24px;
+    /* Adjust icon size if needed */
+  }
+</style>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+    <a class="navbar-brand custom-navbar-brand" href="index.html">
+      <img src="./Assets/logo/vecteezy_stethoscope-and-shield-logo-healthcare_24595798.png" alt="img Logo"
+        class="custom-logo">
+    </a>
+    <button class="navbar-toggler custom-navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav custom-navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link custom-nav-link text-dark fw-bold" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link text-dark fw-bold" href="./Assets/About Us/aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link text-dark fw-bold" href="./Assets/Services/services.html">Services</a>
+        </li>
+        <li class="nav-item dropdown position-relative">
+          <a class="nav-link dropdown-toggle custom-dropdown-link text-dark fw-bold"
+            href="./Assets/department/department.html" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+            Departments
+          </a>
+          <ul class="dropdown-menu custom-dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item custom-dropdown-item text-dark fw-bold"
+                href="./Assets/department/department.html#cardiology">Cardiology</a></li>
+            <li><a class="dropdown-item custom-dropdown-item text-dark fw-bold"
+                href="./Assets/department/department.html#neurology">Neurology</a></li>
+            <li><a class="dropdown-item custom-dropdown-item text-dark fw-bold"
+                href="./Assets/department/department.html#orthopedics">Orthopedics</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-nav-link text-dark fw-bold" href="contact.html" target="_blank">Contact</a>
+        </li>
+      </ul>
+      <button class="btn btn-book-ambulance my-2 my-sm-0 text-white bg-primary" type="button">
+        <a href="#" class="text-light text-capitalize text-decoration-none custom-ambulance-link" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">BOOK AN AMBULANCE</a>
+      </button>
+    </div>
+  </nav>
+
+
+
+  <!-------------------------------------------- Modal  ------------------------------------------------->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ambulance Application Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="ambulanceForm" class="container" onsubmit="return validateAmbulanceForm()">
+            <div class="mb-3">
+              <label for="ApplicantName" class="form-label">Applicant's Name:</label>
+              <input type="text" class="form-control" id="ApplicantName" placeholder="Enter Full Name">
+              <div id="nameError" class="text-danger" style="display: none;">Please enter a valid name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+              <div id="phoneError" class="text-danger" style="display: none;">Please enter a valid phone number.</div>
+            </div>
+            <div class="mb-3">
+              <label for="ambulanceType" class="form-label">Ambulance Type</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ambulanceType" id="singleAmbulance">
+                <label class="form-check-label" for="singleAmbulance">Single</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="ambulanceType" id="multipleAmbulance">
+                <label class="form-check-label" for="multipleAmbulance">Multiple</label>
+              </div>
+              <div id="ambulanceTypeError" class="text-danger" style="display: none;">Please select an ambulance type.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="medicallyRisky" class="form-label">Medically Risky Group</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="medicallyRisky" id="yesRisky">
+                <label class="form-check-label" for="yesRisky">Yes</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="medicallyRisky" id="noRisky">
+                <label class="form-check-label" for="noRisky">No</label>
+              </div>
+              <div id="medicallyRiskyError" class="text-danger" style="display: none;">Please specify if it's a
+                medically risky group.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- -------------------------------------------------------------------------------- -->
+
+
+  <div class="container-fluid"
+    style="background: url('./Assets/image/hero_home_01.jpg'); background-repeat: no-repeat; background-size: cover; padding: 100px 0px !important;">
+    <div class="equal-height-container container p-5">
+      <!-- Our Locations Section -->
+      <div class="equal-height-item">
+        <h1 class="mb-4">Our Locations</h1>
+        <div class="accordion" id="locationsAccordion">
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Medical HealthCare Hospital, Sector-8, Faridabad
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong> Sector-8, Faridabad<br>
+                <strong>Phone:</strong> 1800 313 1414<br>
+                <strong>Email:</strong> info@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Medical HealthCare Hospital, Sector-19, Faridabad
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong> Sector-19, Faridabad <br>
+                <strong>Phone:</strong> 1800 313 1414<br>
+                <strong>Email:</strong> info@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                Medical HealthCare Hospital, Greater Noida West.
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong> Greater Noida West.<br>
+                <strong>Phone:</strong> 1800 313 1414<br>
+                <strong>Email:</strong> info@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+                Medical HealthCare Hospital, Sector- 87 Gr. Faridabad
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong> Sector- 87 Gr. Faridabad<br>
+                <strong>Phone:</strong> 7838858553<br>
+                <strong>Email:</strong> info@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+                Medical HealthCare Hospital, Greater Kailash-1, New Delhi
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong>Greater Kailash-1, New Delhi<br>
+                <strong>Phone:</strong> +91-85888 84462<br>
+                <strong>Email:</strong> infogk@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item2">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo">
+                Medical HealthCare Hospital, Mathura
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+              data-bs-parent="#locationsAccordion">
+              <div class="accordion-body">
+                <strong>Address:</strong>Mathura<br>
+                <strong>Phone:</strong> 7059005900<br>
+                <strong>Email:</strong> infoMathura@MedicalHealthcarehospital.com
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enquiry Section -->
+      <div class="equal-height-item">
+        <h1 class="mb-5">Enquiry</h1>
+        <form id="myForm" method="post" action="" name="contact-form">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name" name="Name">
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email ID</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email" name="Email">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="mobile" class="form-label">Mobile</label>
+              <input type="text" class="form-control" id="mobile" placeholder="Your Mobile Number" name="Phone">
+            </div>
+            <div class="col-md-6">
+              <label for="location" class="form-label">Choose Location</label>
+              <select id="location" class="form-select" name="Location">
+                <option selected disabled>Select Location</option>
+                <option>Sarvodaya Hospital, Sector-8, Faridabad</option>
+                <option>Sarvodaya Hospital, Sector-19, Faridabad</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="remarks" class="form-label">Remarks</label>
+            <textarea class="form-control" id="remarks" rows="3" placeholder="Your Message" name="Remarks"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------- -->
+
+  <!---------------------------------------- Location Map Section ------------------------------>
+
+  <div class="equal-height-item d-flex flex-column justify-content-center align-items-center mb-5 findUs mt-5">
+    <h2 class="mt-4 mb-4">Find Us</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0234553946475!2d77.5423136753914!3d12.970350887344852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3de3fe4a4839%3A0x92b5acdc8a40b6eb!2sMedical%20Healthcare!5e0!3m2!1sen!2sin!4v1737797785307!5m2!1sen!2sin"
+      width="1200px" height="600px" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+
+  <!-- -------------------------------------------------------------------------------------------------------- -->
+
+  <!-- FAQ Section -->
+  <div class="equal-height-item faq">
+    <h2 class="mt-4 mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            What are the hospital visiting hours?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Our hospital visiting hours are from 9 AM to 6 PM every day. Please call ahead to confirm as these hours may
+            vary for different departments.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How can I book an appointment?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can book an appointment by calling our helpline at 1800 313 1414 or by visiting our website's
+            appointment section.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What insurance providers do you accept?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We accept a wide range of insurance providers. Please contact us for a detailed list of accepted providers.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+  <!-- Staff Directory Section -->
+
+  <div class="equal-height-item mb-5 mt-5">
+    <h2 class="mt-4 mb-4">Meet Our Experts</h2>
+    <div class="row">
+      <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <div class="card">
+          <img src="./Assets/image/Doctors/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg" class="card-img-top"
+            alt="Dr. John Doe" style="object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Dr. John Doe</h5>
+            <p class="card-text">Specialization: Cardiologist</p>
+            <p class="card-text">Dr. John is an expert in heart diseases and offers the best treatment for various
+              cardiovascular conditions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="300">
+        <div class="card">
+          <img src="./Assets/image/Doctors/1000_F_313778250_Y0o5can6MA490Nt7G6p03Zfu5fKmWCIv.jpg" class="card-img-top"
+            alt="Dr. John Doe">
+          <div class="card-body">
+            <h5 class="card-title">Dr. John Doe</h5>
+            <p class="card-text">Specialization: Cardiologist</p>
+            <p class="card-text">Dr. John is an expert in heart diseases and offers the best treatment for various
+              cardiovascular conditions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+        <div class="card">
+          <img src="./Assets/image/Doctors/1000_F_320523164_tx7Rdd7I2XDTvvKfz2oRuRpKOPE5z0ni.jpg" class="card-img-top"
+            alt="Dr. John Doe">
+          <div class="card-body">
+            <h5 class="card-title">Dr. John Doe</h5>
+            <p class="card-text">Specialization: Cardiologist</p>
+            <p class="card-text">Dr. John is an expert in heart diseases and offers the best treatment for various
+              cardiovascular conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!--------------------------------------- Feedback Section ------------------------------------------------------>
+
+  <div class="equal-height-item pb-5" style="background: url('./Assets/image/hero_home_01.jpg');">
+    <h2 class="mt-4 mb-4 text-light">Your Feedback</h2>
+    <form id="feedbackForm" method="post" action="" name="feedback-form">
+      <div class="mb-3">
+        <label for="feedback" class="form-label">Your Feedback</label>
+        <textarea class="form-control" id="feedback" rows="4" placeholder="Please share your experience or suggestions."
+          name="Feedback"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    </form>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- ---------------------------------------------- Footer ---------------------------------------------------------- -->
+
+  <!-- Footer -->
+  <footer class="footer-background footer-center footer-lg-start margin-top">
+    <div class="footer-container padding-all">
+      <div class="footer-row d-flex gap-5">
+        <div class="footer-col-lg-6 footer-col-md-12 footer-margin-bottom footer-margin-bottom-md">
+          <h5 class="footer-uppercase">Hospital</h5>
+          <p>
+            Providing exceptional healthcare services with compassion and care.
+          </p>
+          <a class="footer-btn footer-primary-button margin-top-small" href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col-lg-3 footer-col-md-6 footer-margin-bottom footer-margin-bottom-md ms-5">
+          <h5 class="footer-uppercase">Quick Links</h5>
+          <ul class="footer-list-style footer-margin-bottom-none">
+            <li>
+              <a href="/index.html" class="footer-link-dark">Home</a>
+            </li>
+            <li>
+              <a href="./Assets/about/about.html" class="footer-link-dark">About Us</a>
+            </li>
+            <li>
+              <a href="./Assets/Services/services.html" class="footer-link-dark">Services</a>
+            </li>
+            <li>
+              <a href="./Assets/department/department.html" class="footer-link-dark">Departments</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col-lg-3 footer-col-md-6 footer-margin-bottom footer-margin-bottom-md">
+          <h5 class="footer-uppercase">Contact Information</h5>
+          <ul class="footer-list-style footer-margin-bottom-none">
+            <li>
+              <a href="mailto:kushwahamonika26@gmail.com" class="footer-link-dark">Email: kushwahamonika26@gmail.com</a>
+            </li>
+            <li>
+              <a href="tel:+7011128675" class="footer-link-dark">Phone: 7011128675</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link-dark">Address: Faridabad, Haryana</a>
+            </li>
+          </ul>
+          <div class="footer-margin-top">
+            <a class="footer-btn footer-outline-primary bg-primary text-light"
+              href="mailto:kushwahamonika26@gmail.com?subject=Hello!">Email Us</a>
+            <a class="footer-btn footer-outline-primary bg-primary text-light" href="tel:+917011128675">Call Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-center-text footer-padding-small footer-background-dark footer-text-white">
+      By Monika © 2025 Hospital. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- ----------------------------------------------------------------------------------------------------- -->
+
+  <!-- Floating button container -->
+  <div class="scroll-to-top-container">
+    <div class="scroll-to-top-btn" id="scrollToTopBtn">
+      <i class="fa fa-arrow-up"></i> <!-- Icon for scroll up -->
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------------------------------------------- -->
+
+
+
+
+  <script src="./Assets/css/bootstrap.bundle.min.js"></script>
+  <script src="./Assets/jquery/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      // Validate form on submit
+      $("#myForm").on("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Clear previous errors
+        $(".error").remove();
+
+        // Get form values using let
+        let name = $("#name").val();
+        let email = $("#email").val();
+        let mobile = $("#mobile").val();
+        let location = $("#location").val();
+        let remarks = $("#remarks").val();
+
+        let isValid = true;
+
+        // Name validation
+        if (name.trim() === "") {
+          isValid = false;
+          $("#name").after('<div class="error text-danger">Name is required</div>');
+        }
+
+        // Email validation
+        let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email)) {
+          isValid = false;
+          $("#email").after('<div class="error text-danger">Please enter a valid email</div>');
+        }
+
+        // Mobile validation
+        let mobileRegex = /^[0-9]{10}$/; // Assuming a 10-digit mobile number
+        if (!mobileRegex.test(mobile)) {
+          isValid = false;
+          $("#mobile").after('<div class="error text-danger">Please enter a valid 10-digit mobile number</div>');
+        }
+
+        // Location validation
+        if (location === null || location === "") {
+          isValid = false;
+          $("#location").after('<div class="error text-danger">Location is required</div>');
+        }
+
+        // Remarks validation
+        if (remarks.trim() === "") {
+          isValid = false;
+          $("#remarks").after('<div class="error text-danger">Remarks are required</div>');
+        }
+
+        // If the form is valid, submit it (you can replace this with actual form submission logic)
+        if (isValid) {
+          alert("Form submitted successfully!");
+          // For actual form submission, you can call:
+          // this.submit();
+        }
+      });
+    });
+
+    // -----------------------------------------------  Google-sheet code ---------------------------------------------------
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwAkJiYAkxQadLUQhHyLIsN6BLonnlAPzmiRpCp_C4T2j7JGvKtQ7mEczywWitRt3OA/exec'
+
+    const form = document.forms['contact-form']
+
+    form.addEventListener('submit', e => {
+
+      e.preventDefault()
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Thank you! Form is submitted"))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+    // ---------------------------------------feedback form ---------------------------------------------------------------
+
+
+    document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form from submitting
+
+      // Display an alert to the user
+      alert('Thank you for your feedback! We appreciate your time and effort.');
+
+      // Optionally, you can clear the form after submission
+      document.getElementById('feedbackForm').reset();
+    });
+
+
+    $(document).ready(function () {
+      new WOW().init();
+      AOS.init();
+    });
+  </script>
+
+  <script>
+    function validateForm() {
+      // Reset all error messages
+      resetErrors();
+
+      let isValid = true;
+
+      // Validate Applicant's Name (only letters and spaces allowed)
+      const applicantName = document.getElementById('ApplicantName').value.trim();
+      if (!applicantName || !/^[A-Za-z\s]+$/.test(applicantName)) {
+        document.getElementById('nameError').style.display = 'block';
+        isValid = false;
+      }
+
+      // Validate Phone Number 
+      const phone = document.getElementById('phone').value.trim();
+      const phoneRegex = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/;
+      if (!phone || !phoneRegex.test(phone)) {
+        document.getElementById('phoneError').style.display = 'block';
+        isValid = false;
+      }
+
+      // Validate Ambulance Type (Radio button selection)
+      const ambulanceTypeSelected = document.querySelector('input[name="ambulanceType"]:checked');
+      if (!ambulanceTypeSelected) {
+        document.getElementById('ambulanceTypeError').style.display = 'block';
+        isValid = false;
+      }
+
+      // Validate Medically Risky Group (Radio button selection)
+      const medicallyRiskySelected = document.querySelector('input[name="medicallyRisky"]:checked');
+      if (!medicallyRiskySelected) {
+        document.getElementById('medicallyRiskyError').style.display = 'block';
+        isValid = false;
+      }
+
+
+      // If the form is valid, return true (submit the form)
+      if (isValid) {
+        alert("Form submitted successfully!");
+      }
+
+      return isValid; // If all fields are valid, the form will submit, otherwise, it prevents submission
+    }
+
+
+    function resetErrors() {
+      // Reset all error messages
+      document.getElementById('nameError').style.display = 'none';
+      document.getElementById('phoneError').style.display = 'none';
+      document.getElementById('ambulanceTypeError').style.display = 'none';
+      document.getElementById('medicallyRiskyError').style.display = 'none';
+    }
+
+    // --------------------------------------------------------------------------------------------------
+
+    // Get the button element
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // When the user clicks the button, scroll to the top of the document
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // Smooth scrolling effect
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

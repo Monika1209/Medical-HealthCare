@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department</title>
+    <link rel="stylesheet" href="department.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!----------------------------------------------- Navbar start --------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand" href="/index.html">
+            <img src="../logo/vecteezy_stethoscope-and-shield-logo-healthcare_24595798.png" alt="Logo" class="img-fluid"
+                style="max-width: 120px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark fw-bold" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-bold" href="../about/about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-bold" href="../Services/services.html">Services</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark fw-bold" href="../department/department.html"
+                        id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+                        Departments
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item text-dark fw-bold" href="#cardiology">Cardiology</a></li>
+                        <li><a class="dropdown-item text-dark fw-bold" href="#neurology">Neurology</a></li>
+                        <li><a class="dropdown-item text-dark fw-bold" href="#orthopedics">Orthopedics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark fw-bold" href="/contact.html">Contact</a>
+                </li>
+            </ul>
+            <button class="btn btn-primary my-2 my-sm-0 ms-2" type="button">
+                <a href="#" class="text-white text-decoration-none fw-bold" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">BOOK AN AMBULANCE</a>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-------------------------------------------- Modal  ------------------------------------------------->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ambulance Application Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="ambulanceForm" class="container" onsubmit="return validateForm()">
+                        <div class="mb-3">
+                            <label for="ApplicantName" class="form-label">Applicant's name: </label>
+                            <input type="text" class="form-control" id="ApplicantName" aria-describedby="nameHelp"
+                                placeholder="Enter Full name">
+                            <div id="nameError" class="text-danger" style="display: none;">Please enter a valid name.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                            <div id="phoneError" class="text-danger" style="display: none;">Please enter a valid phone
+                                number.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ambulanceType" class="form-label">Are you requesting single or multiple
+                                ambulances?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ambulanceType" id="singleAmbulance">
+                                <label class="form-check-label" for="singleAmbulance">Single</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ambulanceType"
+                                    id="multipleAmbulance">
+                                <label class="form-check-label" for="multipleAmbulance">Multiple</label>
+                            </div>
+                            <div id="ambulanceTypeError" class="text-danger" style="display: none;">Please select
+                                whether you need a single or multiple ambulances.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="medicallyRisky" class="form-label">Will there be any medically risky group of
+                                people?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medicallyRisky" id="yesRisky">
+                                <label class="form-check-label" for="yesRisky">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="medicallyRisky" id="noRisky">
+                                <label class="form-check-label" for="noRisky">No</label>
+                            </div>
+                            <div id="medicallyRiskyError" class="text-danger" style="display: none;">Please select if
+                                there will be any medically risky group of people.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-------------------------------------------- Modal end ------------------------------------------------->
+
+    <!-------------------------------- Navbar end ---------------------------------------------->
+
+    <!------------------------------ header container ------------------------------------------------>
+
+    <div class="container-fluid custom-container">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h1 class="fs-4 fs-md-2 fs-lg-1 h1" data-aos="fade-down" data-aos-delay="400">
+                    Hospital Department List: Everything You Need to Know
+                </h1>
+            </div>
+        </div>
+    </div>
+
+
+    <!------------------------------ header container end ------------------------------------------------>
+
+    <!---------------------------------- latestpost container start -------------------------------------->
+
+    <div class="latest-posts-container mt-4">
+        <div class="row g-5">
+            <!-- Left Column -->
+            <div class="col-lg-8 post-content me-5" data-aos="fade-right" data-aos-delay="400">
+                <img src="image/Hospital-Department-List.webp" alt="Hospital Department List"
+                    class="post-image img-fluid">
+                <div class="post-metadata mt-2">
+                    <span><i class="fa fa-user"></i> Harsh GoAid</span>
+                    <span><i class="fa fa-calendar"></i> December 12, 2024</span>
+                    <span><i class="fa fa-comments"></i> No Comments</span>
+                </div>
+                <p class="mt-3">
+                    Whenever a normal person, who doesn’t have much knowledge about hospitals, their work, and their
+                    departments, goes for treatment in any hospital, they always get confused with the Different types
+                    of Hospital Departments. What do you think? Is it that hard to understand what the hospital
+                    department is? Are there too many hospital departments? Tons of people tirelessly look for details
+                    about the hospital department’s list. <br> <br> When an average person with little knowledge about
+                    hospitals, their functions, and various departments seeks treatment, they often find themselves
+                    confused. The different types of hospital departments can be overwhelming.
+                    <br> <br>
+                    But is understanding hospital departments really that complicated? Are there too many of them? Many
+                    people tirelessly search for information about hospital departments to better navigate their
+                    healthcare journey. <br> <br>
+
+                    If you’ve ever felt lost when visiting a hospital, you’re not alone. Let’s explore the essential
+                    hospital departments and what they do.
+                </p>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-3 latest-posts" data-aos="fade-left" data-aos-delay="400">
+                <h5 class="latest-posts-header">Latest Posts</h5>
+                <div class="latest-posts-list">
+                    <div class="latest-post-item">
+                        <img src="../image/Services/pexels-photo-7653133.jpeg" alt="Post Image" class="img-fluid">
+                        <div>
+                            <a href="#">Top 10 Patna Best Neurology Hospitals</a>
+                            <div class="latest-post-date text-muted">January 23, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/pexels-photo-7195078.webp" alt="Post Image" class="img-fluid">
+                        <div>
+                            <a href="#">Top 10 Private and Government Cancer Hospitals in India</a>
+                            <div class="latest-post-date text-muted">January 22, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/pexels-photo-1640777.jpeg" alt="Post Image" class="img-fluid">
+                        <div>
+                            <a href="#">Difference between fissures and piles</a>
+                            <div class="latest-post-date text-muted">January 22, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/pexels-photo-5214998.jpeg" alt="Post Image" class="img-fluid">
+                        <div>
+                            <a href="#">Top 10 Cancer Hospitals in India</a>
+                            <div class="latest-post-date text-muted">January 21, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/pexels-photo-7653133.jpeg" alt="Post Image" class="img-fluid">
+                        <div>
+                            <a href="#">Top 10 Patna Best Neurology Hospitals</a>
+                            <div class="latest-post-date text-muted">January 23, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/istockphoto-1402396919-612x612.jpg" alt="Orthopedics Department"
+                            class="img-fluid">
+                        <div>
+                            <a href="#">Understanding Orthopedics: Treatments and Procedures</a>
+                            <div class="latest-post-date text-muted">January 20, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/Services/istockphoto-648181930-612x612.jpg" alt="Cardiology Department"
+                            class="img-fluid">
+                        <div>
+                            <a href="#">The Role of Cardiology in Heart Health</a>
+                            <div class="latest-post-date text-muted">January 19, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../department/image/Neurology-1024x576.jpg" alt="Neurology Department"
+                            class="img-fluid">
+                        <div>
+                            <a href="#">Advancements in Neurology: The Latest Treatments</a>
+                            <div class="latest-post-date text-muted">January 18, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/gallery/p4.webp" alt="Gynecology Department" class="img-fluid">
+                        <div>
+                            <a href="#">Women's Health: What You Need to Know about Gynecology</a>
+                            <div class="latest-post-date text-muted">January 17, 2025</div>
+                        </div>
+                    </div>
+                    <div class="latest-post-item">
+                        <img src="../image/gallery/p6.jpg" alt="Oncology Department" class="img-fluid">
+                        <div>
+                            <a href="#">What You Should Know about Cancer and the Oncology Department</a>
+                            <div class="latest-post-date text-muted">January 16, 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------------------------------------------------------------- -->
+
+
+    <!---------------------------------- Department container start -------------------------------------->
+
+    <div class="container-fluid hospital-container px-5 mt-5">
+        <!-- What is a Hospital Department Section -->
+        <h2 class="hospital-heading">What is a Hospital Department?</h2>
+        <p class="hospital-paragraph">
+            A hospital department is a specialized unit within a healthcare facility dedicated to providing focused
+            medical care and services. Each department is equipped with specific resources, staff, and technology to
+            address particular health needs.
+        </p>
+        <p class="hospital-paragraph">
+            These units are organized to cater to patient care, enhance treatment efficacy, and ensure efficient
+            operation within the hospital. Departments often include a range of professionals such as doctors, nurses,
+            technicians, and support staff, all working collaboratively.
+        </p>
+        <p class="hospital-paragraph">
+            The structure of hospital departments allows for a multidisciplinary approach to patient care, ensuring that
+            individuals receive comprehensive and specialized medical attention tailored to their specific conditions
+            and needs.
+        </p>
+        <p class="hospital-paragraph">
+            Read More:
+            <a href="#" class="hospital-link">Introduction to Standard Protocols for Paramedics to Follow</a>
+        </p> <br>
+
+        <h2 class="hospital-heading">Complete Details about the Hospital Departments</h2>
+        <p class="hospital-paragraph">
+            This is the complete detail about All Major Hospital Departments listed in the above list:
+        </p> <br>
+
+        <!-- Department 1: Emergency Department -->
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <h2 class="hospital-heading">1. Emergency Department</h2>
+                    <div class="image-box">
+                        <img src="image/Emergency-Department-1024x576.jpg" alt="Emergency-Department"
+                            class="hospital-image img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="hospital-heading mt-5">Brief Description of this Hospital Department</h3>
+            <p>
+                The <span class="highlight">Emergency Department</span> (ED) provides immediate medical attention for
+                acute illnesses, injuries, and life-threatening conditions.
+                It operates 24/7, equipped to handle a wide range of emergencies with specialized staff and resources.
+            </p>
+
+            <!-- Issues Covered -->
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="mt-4">Issues Covered Under this Hospital Department</h3>
+                    <p class="fst-italic">These are the major issues covered under this or similar kinds of Hospital
+                        Departments:</p>
+                    <ul>
+                        <li><a href="#">Heart attacks</a></li>
+                        <li>Strokes</li>
+                        <li>Severe injuries</li>
+                        <li>Respiratory distress</li>
+                        <li>Acute infections</li>
+                        <li>Trauma</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img src="../department/image/Issues Covered Under this Hospital Department.webp"
+                        alt="Issues Covered" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Specified Doctors -->
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="mt-4">Specified Doctors Under this Hospital Department</h3>
+                    <p>
+                        The names of the Specified Doctors under this or similar kinds of Hospital Departments are based
+                        on their duties and specified work.
+                        These are the possible names of the doctors in this hospital department:
+                    </p>
+                    <ul>
+                        <li>Emergency Physicians</li>
+                        <li>Trauma Surgeons</li>
+                        <li>Critical Care Specialists</li>
+                        <li>Anesthesiologists</li>
+                        <li>Cardiologists</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <img src="../department/image/Specified Doctors Under this Hospital Department.webp"
+                        alt="Doctors in Emergency" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Functions -->
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="mt-4">Functions of the Emergency Department of the Hospital</h3>
+                    <p class="fst-italic">These are the key functions of this or similar kinds of hospital departments:
+                    </p>
+                    <ol>
+                        <li>Provide immediate medical care for acute illnesses and injuries.</li>
+                        <li>Stabilize patients with life-threatening conditions.</li>
+                        <li>Perform rapid diagnostic assessments and imaging.</li>
+                        <li>Administer emergency medications and treatments.</li>
+                        <li>Coordinate with other departments for specialized care.</li>
+                        <li>Manage trauma and resuscitation efforts.</li>
+                        <li>Facilitate patient transfers to appropriate care units.</li>
+                        <li>Provide emergency mental health services.</li>
+                    </ol>
+                </div>
+                <div class="col-md-4">
+                    <img src="../department/image/Functions of the Emergency Department of the Hospital.webp"
+                        alt="Emergency Functions" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="mt-4">Benefits to the Patients under this Hospital Department</h3>
+                    <p class="fst-italic">These are the key benefits that you can get under this hospital Department:
+                    </p>
+                    <ul>
+                        <li>Immediate care</li>
+                        <li>Life-saving interventions</li>
+                        <li>Rapid diagnosis</li>
+                        <li>Pain management</li>
+                        <li>Stabilization of conditions</li>
+                        <li>Coordination of further treatment</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <img src="../department/image/Benefits to the Patients under this Hospital Department.webp"
+                        alt="Emergency Benefits" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- department 2: Cardiology Department -->
+
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <h2 class="hospital-heading" id="cardiology">2. Cardiology</h2>
+                    <div class="image-box">
+                        <img src="image/Cardiology-1024x576.jpg" alt="Cardiology" class="hospital-image img-fluid">
+                    </div>
+                </div>
+
+                <h3 class="hospital-heading mt-5">Brief Description of this Hospital Department</h3>
+                <p>
+                    The <span class="highlight">Cardiology Department</span> specializes in the diagnosis and treatment
+                    of heart and vascular conditions. It includes non-invasive and invasive procedures to manage
+                    cardiovascular diseases.
+                </p>
+
+                <!-- Issues Covered -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Issues Covered Under this Hospital Department</h3>
+                        <p class="fst-italic">These are the major issues covered under this or similar kinds of Hospital
+                            Departments:</p>
+                        <ul>
+                            <li>Coronary artery disease</li>
+                            <li>Heart failure</li>
+                            <li>Arrhythmias</li>
+                            <li>Hypertension</li>
+                            <li>Valve disorders</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/Issue cardilogy.webp" alt="Issues Covered" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Specified Doctors -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Specified Doctors Under this Hospital Department</h3>
+                        <p>
+                            The names of the Specified Doctors under this or similar kinds of Hospital Departments are
+                            based on their duties and specified work.
+                            These are the possible names of the doctors in this hospital department:
+                        </p>
+                        <ul>
+                            <li>Cardiologists</li>
+                            <li>Interventional Cardiologists</li>
+                            <li>Electrophysiologists</li>
+                            <li>Cardiothoracic Surgeons</li>
+                            <li>Vascular Surgeons</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <img src="../department/image/doctor-cardio.jpg" alt="Cardiology Doctors" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Functions -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Functions of the Cardiology Department of the Hospital</h3>
+                        <p class="fst-italic">These are the key functions of this or similar kinds of hospital
+                            departments:</p>
+                        <ol>
+                            <li>Diagnose and treat cardiovascular diseases.</li>
+                            <li>Perform non-invasive and invasive cardiac procedures.</li>
+                            <li>Monitor and manage chronic heart conditions.</li>
+                            <li>Conduct heart-related diagnostic tests (e.g., EKG, stress tests).</li>
+                            <li>Provide interventional cardiology services (e.g., angioplasty).</li>
+                            <li>Offer cardiac rehabilitation programs.</li>
+                            <li>Conduct research and clinical trials in cardiology.</li>
+                            <li>Educate patients on heart health and preventive measures.</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/cardiology functions.webp" alt="Cardiology Functions"
+                            class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Benefits to the Patients under this Hospital Department</h3>
+                        <p class="fst-italic">These are the key benefits that you can get under this hospital
+                            Department:</p>
+                        <ul>
+                            <li>Specialized heart care</li>
+                            <li>Advanced diagnostic testing</li>
+                            <li>Preventive cardiology</li>
+                            <li>Interventional procedures</li>
+                            <li>Surgical options</li>
+                            <li>Chronic disease management</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/cardiology benefits.jpeg" alt="Cardiology Benefits"
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Department 3: Neurology Department -->
+            <div class="container mt-5">
+                <!-- Neurology Department -->
+                <!-- Neurology Section -->
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h2 class="hospital-heading" id="neurology">3. Neurology</h2>
+                        <div class="image-box">
+                            <img src="image/Neurology-1024x576.jpg" alt="Neurology-Department"
+                                class="hospital-image img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="hospital-heading mt-5">Brief Description of this Hospital Department</h3>
+                <p>
+                    The <span class="highlight">Neurology Department</span> specializes in the diagnosis and treatment
+                    of disorders
+                    affecting the nervous system, including the brain, spinal cord, and peripheral nerves.
+                    It is equipped with advanced technologies and experienced neurologists to provide comprehensive
+                    care.
+                </p>
+
+
+                <!-- Issues Covered -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Issues Covered Under this Hospital Department</h3>
+                        <p class="fst-italic">These are the major issues covered under this or similar kinds of Hospital
+                            Departments:</p>
+                        <ul>
+                            <li><a href="#">Epilepsy</a></li>
+                            <li>Stroke</li>
+                            <li>Migraine and chronic headaches</li>
+                            <li>Parkinson’s disease</li>
+                            <li>Multiple sclerosis</li>
+                            <li>Neuropathy</li>
+                            <li>Dementia and Alzheimer’s disease</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/Issues Covered Under neurologyHospital Department.jpeg"
+                            alt="Neurology Issues" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Specified Doctors -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Specified Doctors Under this Hospital Department</h3>
+                        <p>
+                            The names of the Specified Doctors under this or similar kinds of Hospital Departments are
+                            based on their duties and specified work.
+                            These are the possible names of the doctors in this hospital department:
+                        </p>
+                        <ul>
+                            <li>Neurologists</li>
+                            <li>Neurosurgeons</li>
+                            <li>Neurophysiologists</li>
+                            <li>Stroke Specialists</li>
+                            <li>Psychiatrists (for neuropsychiatric conditions)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/neurology doctors.webp" alt="Neurology Doctors" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Functions -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Functions of the Neurology Department of the Hospital</h3>
+                        <p class="fst-italic">
+                            These are the key functions of this or similar kinds of hospital departments:
+                        </p>
+                        <ol>
+                            <li>Diagnose and manage neurological disorders.</li>
+                            <li>Provide treatments for acute neurological emergencies like strokes.</li>
+                            <li>Perform advanced diagnostic tests, such as MRI, CT scans, and EEGs.</li>
+                            <li>Manage chronic conditions like epilepsy and multiple sclerosis.</li>
+                            <li>Provide rehabilitation for neurological disabilities.</li>
+                            <li>Coordinate care with other departments for multi-disciplinary treatment.</li>
+                            <li>Offer counseling and support for patients with degenerative diseases.</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/neurology functions.webp" alt="Neurology Functions"
+                            class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="mt-4">Benefits to the Patients under this Hospital Department</h3>
+                        <p class="fst-italic">
+                            These are the key benefits that you can get under this hospital Department:
+                        </p>
+                        <ul>
+                            <li>Accurate diagnosis of neurological disorders</li>
+                            <li>Personalized treatment plans</li>
+                            <li>Access to advanced imaging and testing facilities</li>
+                            <li>Specialized care for chronic conditions</li>
+                            <li>Comprehensive rehabilitation services</li>
+                            <li>Improved quality of life and symptom management</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../department/image/neurology benefits.webp" alt="Neurology Benefits"
+                            class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <!-- Orthopedics Department -->
+
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <h2 class="hospital-heading" id="neurology">4. Orthopedics</h2>
+                        <div class="image-box">
+                            <img src="image/Orthopedics-1024x576.png" alt="Neurology-Department"
+                                class="hospital-image img-fluid">
+                        </div>
+                    </div>
+
+                    <h3 class="hospital-heading mt-5">Brief Description of this Hospital Department</h3>
+                    <p>
+                        The <span class="highlight">Orthopedics Department</span> focuses on the diagnosis, treatment,
+                        and prevention of conditions related to the musculoskeletal system, including bones, joints,
+                        muscles, ligaments, and tendons.
+                        It offers both surgical and non-surgical solutions to restore mobility and improve quality of
+                        life.
+                    </p>
+
+                    <!-- Issues Covered -->
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="mt-4">Issues Covered Under this Hospital Department</h3>
+                            <p class="fst-italic">These are the major issues covered under this or similar kinds of
+                                Hospital Departments:</p>
+                            <ul>
+                                <li><a href="#">Fractures and dislocations</a></li>
+                                <li>Osteoarthritis</li>
+                                <li>Rheumatoid arthritis</li>
+                                <li>Back pain and spinal disorders</li>
+                                <li>Sports injuries</li>
+                                <li>Joint replacement (knee, hip, shoulder)</li>
+                                <li>Bone tumors</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../department/image/issues-orthopedics.webp" alt="Orthopedic Issues"
+                                class="img-fluid">
+                        </div>
+                    </div>
+
+                    <!-- Specified Doctors -->
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="mt-4">Specified Doctors Under this Hospital Department</h3>
+                            <p>
+                                The names of the Specified Doctors under this or similar kinds of Hospital Departments
+                                are based on their duties and specified work.
+                                These are the possible names of the doctors in this hospital department:
+                            </p>
+                            <ul>
+                                <li>Orthopedic Surgeons</li>
+                                <li>Sports Medicine Specialists</li>
+                                <li>Rheumatologists</li>
+                                <li>Physiatrists (Physical Medicine and Rehabilitation)</li>
+                                <li>Pediatric Orthopedic Specialists</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../department/image/orthopedics doctors.webp" alt="Orthopedic Doctors"
+                                class="img-fluid">
+                        </div>
+                    </div>
+
+                    <!-- Functions -->
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="mt-4">Functions of the Orthopedics Department of the Hospital</h3>
+                            <p class="fst-italic">
+                                These are the key functions of this or similar kinds of hospital departments:
+                            </p>
+                            <ol>
+                                <li>Diagnose and treat injuries and disorders of the musculoskeletal system.</li>
+                                <li>Perform surgical interventions, including fracture repair and joint replacement.
+                                </li>
+                                <li>Provide physical therapy and rehabilitation services.</li>
+                                <li>Offer pain management solutions for chronic orthopedic conditions.</li>
+                                <li>Conduct diagnostic tests, such as X-rays, MRIs, and bone scans.</li>
+                                <li>Design and implement personalized treatment plans for recovery.</li>
+                                <li>Prevent musculoskeletal injuries through education and awareness.</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../department/image/orthopedics functions.jpeg" alt="Orthopedic Functions"
+                                class="img-fluid">
+                        </div>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="mt-4">Benefits to the Patients under this Hospital Department</h3>
+                            <p class="fst-italic">
+                                These are the key benefits that you can get under this hospital Department:
+                            </p>
+                            <ul>
+                                <li>Restored mobility and improved joint function</li>
+                                <li>Comprehensive care for sports and work-related injuries</li>
+                                <li>Access to advanced surgical techniques and technologies</li>
+                                <li>Effective pain management strategies</li>
+                                <li>Rehabilitation for faster recovery</li>
+                                <li>Improved overall quality of life</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="../department/image/ortho-benefit.jpg" alt="Orthopedic Benefits"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!---------------------------------- Department container end -------------------------------------->
+
+
+            <!---------------------------------- faq section start ---------------------------------------------->
+
+            <div class="container my-5">
+                <!-- FAQ Section -->
+                <h2 class="text-center mb-4">Hospital FAQ</h2>
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What is a Hospital Department?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                A Hospital Department is a specialized unit within a healthcare facility dedicated to
+                                providing focused medical care and services, each equipped with specific resources,
+                                staff, and technology to address particular health needs.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How many Hospital Departments are there typically in a hospital?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The number of Hospital Departments in a hospital can vary, but a comprehensive hospital
+                                department list generally includes around 20-25 major departments, each specializing in
+                                different areas of medical care.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Why is it important to know the Hospital departments list?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Knowing the Hospital Departments list is crucial for understanding the specialized
+                                services available, facilitating better navigation of the healthcare system, and
+                                ensuring patients seek the appropriate care for their specific medical conditions.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What does the Radiology Department handle?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The Radiology Department specializes in diagnostic imaging, including X-rays, CT scans,
+                                MRI, and ultrasound, to identify and monitor medical conditions.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                What services are available in the Cardiology Department?
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                The Cardiology Department offers diagnostic and treatment services for heart-related
+                                conditions, including ECG, stress tests, and cardiac catheterization.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="text-center mt-5 d-flex flex-column align-items-start">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1BVpuWWzAT/?mibextid=qi2Omg" aria-label="Facebook"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="www.twitter.com" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="www.instagram.com" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/monika-kushwaha-458277198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!---------------------------------- faq section end ---------------------------------------------->
+
+            <!-------------------------------- leave a reply section  --------------------------------------->
+
+            <div class="container my-5">
+                <h3 class="mb-4">Leave a Reply</h3>
+                <p>Your email address will not be published. Required fields are marked <span
+                        class="text-danger">*</span></p>
+
+                <form id="replyForm" novalidate>
+                    <!-- Comment Field -->
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Comment <span class="text-danger">*</span></label>
+                        <textarea id="comment" class="form-control" rows="5"
+                            placeholder="Write your comment here"></textarea>
+                        <div class="error-message" id="commentError"></div>
+                    </div>
+
+                    <!-- Name Field -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        <div class="error-message" id="nameError"></div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <!-- Website Field -->
+                    <div class="mb-3">
+                        <label for="website" class="form-label">Website</label>
+                        <input type="url" id="website" class="form-control" placeholder="Enter your website (optional)">
+                        <div class="error-message" id="websiteError"></div>
+                    </div>
+
+                    <!-- Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="saveInfo">
+                        <label class="form-check-label" for="saveInfo">Save my name, email, and website in this browser
+                            for the next time I comment.</label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+
+                <!-- Confirmation Message -->
+                <div id="confirmationMessage" class="mt-3" style="display: none;">
+                    <div class="alert alert-success" role="alert">
+                        Your comment has been submitted successfully!
+                    </div>
+                </div>
+            </div>
+
+
+            <!-------------------------------- leave a reply section end --------------------------------------->
+
+            <!-------------------------------- footer start ---------------------------------------------->
+
+            <footer class="bg-light text-center text-lg-start mt-5">
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Hospital</h5>
+                            <p>
+                                Providing exceptional healthcare services with compassion and care.
+                            </p>
+                            <a class="btn btn-primary mt-2" href="/contact.html">Contact Us</a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Quick Links</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="/index.html" class="text-dark">Home</a>
+                                </li>
+                                <li>
+                                    <a href="../about/about.html" class="text-dark">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="../Services/services.html" class="text-dark">Services</a>
+                                </li>
+                                <li>
+                                    <a href="/contact.html" class="text-dark">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Contact Information</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="mailto:kushwahamonika26@gmail.com"
+                                        class="text-dark">Email:kushwahamonika26@gmail.com</a>
+                                </li>
+                                <li>
+                                    <a href="tel:+7011128675" class="text-dark">Phone:7011128675</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-dark">Address: faridabad , Haryana</a>
+                                </li>
+                            </ul>
+                            <div class="mt-3">
+                                <a class="btn btn-outline-primary"
+                                    href="mailto:kushwahamonika26@gmail.com?subject=Hello!">Email Us</a>
+                                <a class="btn btn-outline-primary" href="tel:+917011128675">Call Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center p-3 bg-dark text-white">
+                    By Monika © 2025 Hospital. All rights reserved.
+                </div>
+            </footer>
+
+
+            <!-- -------------------------------------------------------------------------------------------- -->
+
+            <!-- Floating button container -->
+            <div class="scroll-to-top-container">
+                <div class="scroll-to-top-btn" id="scrollToTopBtn">
+                    <i class="fa fa-arrow-up"></i> <!-- Icon for scroll up -->
+                </div>
+            </div>
+
+            <!-- ----------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+            <script src="department.js"></script>
+            <script src="../css/bootstrap.bundle.min.js"></script>
+            <script src="../jquery/jquery-3.7.1.min.js"></script>
+            <!-- AOS JS -->
+            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+            <script>
+                AOS.init(); // Initialize AOS animations
+
+
+                $(document).ready(function () {
+                    $('#replyForm').on('submit', function (e) {
+                        e.preventDefault();
+
+                        // Clear previous error messages
+                        $('.error-message').text('');
+
+                        // Validation flags
+                        let isValid = true;
+
+                        // Validate Comment
+                        const comment = $('#comment').val().trim();
+                        if (comment === '') {
+                            $('#commentError').text('Comment is required.');
+                            isValid = false;
+                        }
+
+                        // Validate Name
+                        const name = $('#name').val().trim();
+                        if (name === '') {
+                            $('#nameError').text('Name is required.');
+                            isValid = false;
+                        }
+
+                        // Validate Email
+                        const email = $('#email').val().trim();
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (email === '') {
+                            $('#emailError').text('Email is required.');
+                            isValid = false;
+                        } else if (!emailRegex.test(email)) {
+                            $('#emailError').text('Please enter a valid email address.');
+                            isValid = false;
+                        }
+
+                        // Validate Website (optional but must be a valid URL if entered)
+                        const website = $('#website').val().trim();
+                        const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/[\w-]*)*\/?$/;
+                        if (website !== '' && !urlRegex.test(website)) {
+                            $('#websiteError').text('Please enter a valid URL.');
+                            isValid = false;
+                        }
+
+                        // If all validations pass
+                        if (isValid) {
+                            $('#confirmationMessage').fadeIn();
+                            setTimeout(() => $('#confirmationMessage').fadeOut(), 3000);
+                            $(this)[0].reset();
+                        }
+                    });
+                });
+
+                //   ---------------------------------------------------------------------
+
+                // Get the button element
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                // When the user clicks the button, scroll to the top of the document
+                scrollToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'  // Smooth scrolling effect
+                    });
+                });
+
+            </script>
+
+</body>
+
+</html>
