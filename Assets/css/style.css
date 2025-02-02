@@ -232,7 +232,7 @@ form {
 
 
 /* ------------------------------------------------------- */
-.main-box, html {
+.main-box {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -355,7 +355,6 @@ form {
 
     .images {
         width: 100%;
-        margin-top: 1rem;
         display: flex;
         justify-content: center;
     }
@@ -367,10 +366,16 @@ form {
 
     .search-section {
         flex-direction: column;
+        margin-top: -20px;
     }
 
     .search-section select {
         margin-bottom: 0.5rem;
+        font-size: 16px;
+    }
+
+    .search-section select option {
+       font-size: 14px;
     }
 }
 
@@ -696,6 +701,7 @@ form {
     font-size: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    z-index: 10000;
   }
 
   /* --------------------------------------------------------------------------------------- */
