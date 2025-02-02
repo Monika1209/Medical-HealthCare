@@ -357,6 +357,7 @@ form {
         width: 100%;
         display: flex;
         justify-content: center;
+        padding-bottom: 30px;
     }
 
     .images img {
@@ -651,6 +652,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none;
     background-color: #f8f9fa;
+    z-index: 99999;
   }
   #chatbot-header {
     background-color: #007bff;
@@ -696,13 +698,23 @@ form {
     color: white;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     font-size: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    z-index: 10000;
+    z-index: 9999;
   }
+
+  @media (max-width: 768px) {
+    #chatbot-toggle {
+        display: block !important;
+        right: 5%;
+        bottom: 200px;
+        height: 50px;
+        width: 50px;
+    }
+}
 
   /* --------------------------------------------------------------------------------------- */
 
@@ -819,8 +831,8 @@ footer a:hover {
     background-color: #007bff; /* Button background color */
     color: white;              /* Icon color */
     border-radius: 50%;        /* Circle shape */
-    width: 50px;               /* Width of the circle */
-    height: 50px;              /* Height of the circle */
+    width: 60px;               /* Width of the circle */
+    height: 60px;              /* Height of the circle */
     display: flex;             /* Center the icon */
     justify-content: center;  /* Horizontally center */
     align-items: center;      /* Vertically center */
@@ -828,6 +840,7 @@ footer a:hover {
     cursor: pointer;          /* Change cursor to pointer */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
     transition: background-color 0.3s ease; /* Smooth background color transition */
+    z-index: 9999999999999;            /* Ensure it's on top of other elements */
 }
 
 /* Hover effect for button */
@@ -839,4 +852,17 @@ footer a:hover {
 .scroll-to-top-btn i {
     font-size: 24px;  /* Adjust icon size if needed */
 }
+
+@media (max-width: 768px) {
+    .scroll-to-top-container {
+        display: block !important;
+        right: 5%;
+        bottom: 270px;
+    }
+
+    .scroll-to-top-btn{
+        width: 50px;
+        height: 50px;
+    }
+  }
 
