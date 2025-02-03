@@ -1,36 +1,41 @@
-/* Modal Styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .healthcare-modal-content {
     background-color: #ffffff;
     border-radius: 10px;
     border: 1px solid #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 95%; /* Increased width to 90% */
-    max-width: 1100px; /* Set max-width to 900px */
-    height: auto; /* Auto height */
-    max-height: 400px; /* Limit maximum height */
-    overflow-y: auto; /* Scroll if content exceeds max height */
+    width: 95%;
+    max-width: 1100px; 
+    height: auto; 
+    max-height: 400px; 
+    overflow-y: auto; 
   }
 
   .healthcare-modal-header {
     background-color: #003366;
     color: white;
-    padding: 10px 20px; /* Reduced padding for a smaller header */
+    padding: 10px 20px; 
     border-radius: 10px 10px 0 0;
   }
 
   .healthcare-modal-title {
-    font-size: 1.6rem; /* Slightly larger title */
+    font-size: 1.6rem; 
   }
 
   .healthcare-modal-body {
-    padding: 15px 25px; /* Reduced padding to decrease height */
+    padding: 15px 25px; 
     font-size: 1.1rem;
     color: #555;
-    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+    overflow-y: auto; 
   }
 
   .healthcare-modal-footer {
-    padding: 12px 25px; /* Reduced padding to decrease height */
+    padding: 12px 25px; 
     background-color: #f8f9fa;
     border-radius: 0 0 10px 10px;
   }
@@ -40,7 +45,7 @@
     color: white;
     border: none;
     font-size: 1.1rem;
-    padding: 8px 15px; /* Reduced button padding */
+    padding: 8px 15px; 
   }
 
   .healthcare-modal-footer .healthcare-btn:hover {
@@ -60,34 +65,33 @@
 
 
 .navbar {
-    background-color: #f8f9fa; /* Light background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
-    padding: 10px 20px; /* Add padding */
-    position: fixed; /* Fix navbar on top */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it stays on top */
+    background-color: #f8f9fa; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px; 
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000; 
 }
 
-/* Optionally, add smooth transition */
 .dropdown-menu {
     display: none;
     transition: visibility 0.3s, opacity 0.3s ease;
 }
 
 .navbar-brand img {
-    height: 60px; /* Adjust logo height */
-    width: 80px; /* Adjust logo width */
-    object-fit: cover; /* Ensure the image covers the container */
-    margin-left: 50px; /* Move logo a little to the left */
+    height: 60px; 
+    width: 80px; 
+    object-fit: cover; 
+    margin-left: 50px; 
 }
 .navbar-nav {
-    margin: 0 auto; /* Center the menu */
+    margin: 0 auto; 
 }
 .navbar-nav .nav-item {
-    margin: 0 10px; /* Add some spacing between menu items */
+    margin: 0 10px;
 }
 .navbar-nav .nav-link {
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    transition: color 0.3s; 
 }
 
 .navbar-nav  .nav-link:hover {
@@ -95,15 +99,15 @@
 }
 
 .btn-book-ambulance {
-    background-color: #28a745; /* Green background color */
-    color: white; /* White text color */
-    border: none; /* Remove border */
-    padding: 8px 16px; /* Add padding */
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    transition: background-color 0.3s; 
 }
 .btn-book-ambulance:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838; 
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
@@ -115,18 +119,26 @@
 }
 
 .dropdown-menu .dropdown-item:hover {
-    color: #28a745 !important; /* Green color on hover */
+    color: #28a745 !important; 
 }
 
 .dropdown-menu .dropdown-item {
-    transition: color 0.3s; /* Smooth transition for hover effect */
-    font-weight: bold !important; /* Bold text */
+    transition: color 0.3s; 
+    font-weight: bold !important;
 }
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px; 
+        width: 60px; 
+        margin-left: 10px;
+    }
+}
+
 
 
 /* ---------------------  Appointment form validation  --------------------------------- */
 
-/* General Form Styles */
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -203,13 +215,13 @@ form {
 
 /* ------------------------------------------------------ */
 .carousel-inner img {
-    height: 600px; /* Set your desired height */
-    object-fit: cover; /* Ensure the image covers the container */
+    height: 600px; 
+    object-fit: cover; 
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background color to buttons */
-    border-radius: 50%; /* Optional: Make buttons circular */
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; 
 }
 
 .carousel-inner img {
@@ -221,13 +233,19 @@ form {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: transparent;
     border-radius: 50%;
+}
+
+@media (max-width: 576px) {
+    .carousel-inner img {
+        height: 300px;
+    }
 }
 
 
@@ -335,13 +353,13 @@ form {
 }
 
 .images img {
-    transition: transform 0.6s ease; /* Smooth animation */
-    transform-origin: center; /* Center point for flip */
-    border-radius: 8px; /* Optional */
+    transition: transform 0.6s ease; 
+    transform-origin: center; 
+    border-radius: 8px; 
   }
 
   .images img:hover {
-    transform: rotateY(180deg); /* Flip horizontally */
+    transform: rotateY(180deg); 
   }
 
 @media (max-width: 768px) {
@@ -386,7 +404,7 @@ form {
 /*--------------------------------------------------------- Accordion----------------------------------------- */
 
 .accordion-button {
-    background-color: transparent !important; /* Ensure no background color */
+    background-color: transparent !important; 
     border: none;
     outline: none;
     box-shadow: none;
@@ -435,25 +453,25 @@ form {
     overflow: hidden;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stylish box-shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
 }
 
 .custom-card-img-container {
     overflow: hidden;
-    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    border-radius: 10px 10px 0 0;
 }
 
 .custom-card img {
     width: 100%;
-    height: 250px; /* Increased image height */
+    height: 250px; 
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
 .custom-card-body {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)); /* Soft gradient background */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)); 
     padding: 20px;
-    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    border-radius: 0 0 10px 10px; 
     z-index: 1;
     position: relative;
     transition: background 0.3s ease;
@@ -464,18 +482,15 @@ form {
     font-size: 18px;
 }
 
-/* Hover effect for the card */
 .custom-card:hover {
-    transform: translateY(-10px); /* Lift effect */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced box-shadow */
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); 
 }
 
-/* Hover effect on image */
 .custom-card:hover img {
-    transform: scale(1.1); /* Slight zoom effect on image */
+    transform: scale(1.1);
 }
 
-/* Hover effect for card body background */
 .custom-card:hover .custom-card-body {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)); /* Slightly brighter on hover */
 }
@@ -496,17 +511,15 @@ form {
     color: #fff;
 }
 
-/* Style the features section with Bootstrap grid */
 .custom-features {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: -80px; /* Pull the features section up */
+    margin-top: -80px; 
     padding: 20px;
     z-index: 0;
 }
 
-/* Custom feature styling */
 .custom-feature {
     position: relative;
     width: 18%;
@@ -525,7 +538,6 @@ form {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Add overlay effect on hover */
 .custom-feature::before {
     content: "";
     position: absolute;
@@ -533,7 +545,7 @@ form {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 143, 197, 0.6); /* Semi-transparent blue overlay */
+    background: rgba(0, 143, 197, 0.6); 
     transform: scale(0);
     transform-origin: center;
     border-radius: 8px;
@@ -545,7 +557,6 @@ form {
     transform: scale(1);
 }
 
-/* Content inside the custom-feature */
 .custom-feature .custom-icon,
 .custom-feature h3 {
     position: relative;
@@ -559,13 +570,11 @@ form {
     color: white;
 }
 
-/* Feature icons */
 .custom-icon {
     font-size: 40px;
     margin-bottom: 10px;
 }
 
-/* Add responsiveness for smaller screens */
 @media (max-width: 768px) {
     .custom-feature {
         width: 45%;
@@ -576,35 +585,30 @@ form {
 
 
 .blog-section {
-    background-color: #f8fbfd; /* Light blue background */
-    border: 1px solid #e0e0e0; /* Soft border */
+    background-color: #f8fbfd; 
+    border: 1px solid #e0e0e0;
 }
 
-/* Card Customizations */
 .card {
-    border: none; /* Remove default card border */
-    border-radius: 8px; /* Add rounded corners */
-    background-color: #ffffff; /* White background for cards */
+    border: none;
+    border-radius: 8px; 
+    background-color: #ffffff; 
 }
 
-/* Card Titles */
 .card-title {
-    color: #333; /* Darker text for title */
+    color: #333; 
     font-weight: bold;
 }
 
-/* Card Text */
 .card-text {
-    color: #555; /* Subtle text color */
+    color: #555; 
 }
 
-/* Read More Button */
 .btn-primary {
-    background-color: #007bff; /* Bootstrap Primary Color */
-    border: none; /* No border on button */
+    background-color: #007bff; 
+    border: none; 
 }
 
-/* Add subtle shadow to cards */
 .card.shadow-sm {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -613,11 +617,11 @@ form {
 
 .equal-height-container {
     display: flex;
-    gap: 20px; /* Space between the sections */
+    gap: 20px;
   }
 
   .equal-height-item {
-    flex: 2; /* Make both sections take equal space */
+    flex: 2; 
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
@@ -692,7 +696,7 @@ form {
   }
   #chatbot-toggle {
     position: fixed;
-    bottom: 20px;
+    bottom: 90px;
     right: 20px;
     background-color: #007bff;
     color: white;
@@ -710,7 +714,7 @@ form {
     #chatbot-toggle {
         display: block !important;
         right: 5%;
-        bottom: 200px;
+        bottom: 90px;
         height: 50px;
         width: 50px;
     }
@@ -735,8 +739,9 @@ form {
     cursor: pointer;
     z-index: 1000;
   }
+  
   #whatsapp-icon {
-    top: 50%; /* Middle of the page */
+    top: 50%;
     transform: translateY(-50%);
     background-color: #25d366;
   }
@@ -750,7 +755,7 @@ form {
     background-color: #1da851;
   }
   #twitter-icon {
-    top: calc(50% + 70px); /* Just below WhatsApp */
+    top: calc(50% + 70px);
     transform: translateY(-50%);
     background-color: #1da1f2;
   }
@@ -782,37 +787,37 @@ form {
 /* ------------------------------------------------------------------------------ */
 
 footer {
-    background-color: #f8f9fa; /* Light background color */
-    padding: 40px 0; /* Add padding */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
+    background-color: #f8f9fa; 
+    padding: 40px 0; 
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); 
 }
 footer h5 {
-    font-weight: bold; /* Bold headings */
+    font-weight: bold; 
 }
 footer p {
-    font-size: 1rem; /* Increase font size */
+    font-size: 1rem;
 }
 footer .btn {
-    margin-top: 10px; /* Add margin to buttons */
+    margin-top: 10px; 
 }
 footer .btn-primary {
-    background-color: #007bff; /* Primary button color */
-    border: none; /* Remove border */
+    background-color: #007bff;
+    border: none; 
 }
 footer .btn-outline-primary {
-    border-color: #007bff; /* Outline button border color */
-    color: #007bff; /* Outline button text color */
+    border-color: #007bff; 
+    color: #007bff; 
 }
 footer .btn-outline-primary:hover {
-    background-color: #007bff; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+    background-color: #007bff; 
+    color: white; 
 }
 footer a {
-    text-decoration: none; /* Remove underline from links */
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    text-decoration: none;
+    transition: color 0.3s; 
 }
 footer a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
 }
 
 /* ------------------------------------------------------------------------------------------- */
@@ -821,43 +826,43 @@ footer a:hover {
 /* Container for the button */
 .scroll-to-top-container {
     position: fixed;
-    right: 20px;   /* Position from the right side */
-    bottom: 90px;  /* Position from the bottom */
-    z-index: 9999; /* Ensure it's on top of other elements */
+    right: 20px;  
+    bottom: 20px;  
+    z-index: 9999; 
 }
 
 /* Style for the button */
 .scroll-to-top-btn {
-    background-color: #007bff; /* Button background color */
-    color: white;              /* Icon color */
-    border-radius: 50%;        /* Circle shape */
-    width: 60px;               /* Width of the circle */
-    height: 60px;              /* Height of the circle */
-    display: flex;             /* Center the icon */
-    justify-content: center;  /* Horizontally center */
-    align-items: center;      /* Vertically center */
-    font-size: 24px;           /* Icon size */
-    cursor: pointer;          /* Change cursor to pointer */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-    z-index: 9999999999999;            /* Ensure it's on top of other elements */
+    background-color: #007bff; 
+    color: white;              
+    border-radius: 50%;        
+    width: 60px;              
+    height: 60px;             
+    display: flex;             
+    justify-content: center;  
+    align-items: center;      
+    font-size: 24px;           
+    cursor: pointer;         
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s ease; 
+    z-index: 9999999999999;           
 }
 
 /* Hover effect for button */
 .scroll-to-top-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3; 
 }
 
 /* Optional - Icon inside button */
 .scroll-to-top-btn i {
-    font-size: 24px;  /* Adjust icon size if needed */
+    font-size: 24px;  
 }
 
 @media (max-width: 768px) {
     .scroll-to-top-container {
         display: block !important;
         right: 5%;
-        bottom: 270px;
+        bottom: 20px;
     }
 
     .scroll-to-top-btn{
