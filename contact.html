@@ -8,28 +8,18 @@
   <link rel="stylesheet" href="./Assets/css/style.css">
   <link href="./Assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
 <style>
   .navbar {
     background-color: #f8f9fa;
-    /* Light background color */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Add some shadow for style */
     padding: 10px 20px;
-    /* Add padding */
     position: fixed;
-    /* Fix navbar on top */
     width: 100%;
-    /* Full width */
     z-index: 1000;
-    /* Ensure it stays on top */
   }
 
-  /* Optionally, add smooth transition */
   .dropdown-menu {
     display: none;
     transition: visibility 0.3s, opacity 0.3s ease;
@@ -37,28 +27,21 @@
 
   .navbar-brand img {
     height: 60px;
-    /* Adjust logo height */
     width: 80px;
-    /* Adjust logo width */
     object-fit: cover;
-    /* Ensure the image covers the container */
     margin-left: 50px;
-    /* Move logo a little to the left */
   }
 
   .navbar-nav {
     margin: 0 auto;
-    /* Center the menu */
   }
 
   .navbar-nav .nav-item {
     margin: 0 10px;
-    /* Add some spacing between menu items */
   }
 
   .navbar-nav .nav-link {
     transition: color 0.3s;
-    /* Smooth transition for hover effect */
   }
 
   .navbar-nav .nav-link:hover {
@@ -66,23 +49,9 @@
   }
 
   .btn-book-ambulance {
-    background-color: #28a745;
-    /* Green background color */
-    color: white;
-    /* White text color */
     border: none;
-    /* Remove border */
     padding: 8px 16px;
-    /* Add padding */
     border-radius: 4px;
-    /* Rounded corners */
-    transition: background-color 0.3s;
-    /* Smooth transition for hover effect */
-  }
-
-  .btn-book-ambulance:hover {
-    background-color: #218838;
-    /* Darker green on hover */
   }
 
   .nav-item.dropdown:hover .dropdown-menu {
@@ -90,20 +59,16 @@
   }
 
   .dropdown-menu {
-    margin-top: 0;
-    /* Adjust this if needed */
+    margin-top: 10px;
   }
 
   .dropdown-menu .dropdown-item:hover {
     color: #28a745 !important;
-    /* Green color on hover */
   }
 
   .dropdown-menu .dropdown-item {
     transition: color 0.3s;
-    /* Smooth transition for hover effect */
     font-weight: bold !important;
-    /* Bold text */
   }
 
   /* -------------------------------------------------------------------- */
@@ -111,43 +76,34 @@
   @media (max-width: 768px) {
     .container-fluid {
       padding: 50px 10px !important;
-      /* Reduce padding for smaller screens */
     }
 
     .equal-height-container {
       flex-direction: column;
-      /* Stack items vertically on smaller screens */
     }
 
     .equal-height-item {
       width: 100%;
-      /* Ensure each section takes full width */
       margin-bottom: 20px;
-      /* Add spacing between sections */
     }
 
     .accordion-body {
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .accordion-button {
       font-size: 14px;
-      /* Reduce button text size for smaller screens */
       padding: 10px;
-      /* Adjust padding */
     }
 
     .form-control,
     .form-select {
       font-size: 14px;
-      /* Adjust font size for smaller screens */
       padding: 10px;
-      /* Adjust input padding */
     }
 
     .btn {
       width: 100%;
-      /* Make the submit button full width on small screens */
     }
   }
 
@@ -156,17 +112,13 @@
 
   .findUs iframe {
     max-width: 100%;
-    /* Makes the map responsive */
     width: 100%;
-    /* Ensures it adapts to different screen sizes */
     height: 400px;
-    /* Adjust height for better mobile view */
   }
 
   @media (max-width: 768px) {
     .findUs iframe {
       height: 300px;
-      /* Reduce height for smaller screens */
     }
   }
 
@@ -175,11 +127,8 @@
 
   .footer-background {
     background-color: #f8f9fa;
-    /* Light background color */
     padding: 40px 0;
-    /* Add padding */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    /* Add some shadow for style */
   }
 
   .footer-center {
@@ -208,7 +157,6 @@
 
   .footer-uppercase {
     font-weight: bold;
-    /* Bold headings */
   }
 
   .footer-list-style {
@@ -218,15 +166,12 @@
 
   .footer-link-dark {
     text-decoration: none;
-    /* Remove underline from links */
     color: #333;
     transition: color 0.3s;
-    /* Smooth transition for hover effect */
   }
 
   .footer-link-dark:hover {
     color: #007bff;
-    /* Change color on hover */
   }
 
   .footer-btn {
@@ -237,29 +182,22 @@
 
   .footer-primary-button {
     background-color: #007bff;
-    /* Primary button color */
     color: white;
     border: none;
-    /* Remove border */
   }
 
   .footer-primary-button:hover {
     background-color: #0056b3;
-    /* Darker shade on hover */
   }
 
   .footer-outline-primary {
     border-color: #007bff;
-    /* Outline button border color */
     color: #007bff;
-    /* Outline button text color */
   }
 
   .footer-outline-primary:hover {
     background-color: #007bff;
-    /* Change background color on hover */
     color: white;
-    /* Change text color on hover */
   }
 
   .footer-padding-small {
@@ -292,55 +230,37 @@
 
   /* --------------------------------------------------------------------------------------------- */
 
-  /* Container for the button */
   .scroll-to-top-container {
     position: fixed;
     right: 20px;
-    /* Position from the right side */
     bottom: 20px;
-    /* Position from the bottom */
     z-index: 9999;
-    /* Ensure it's on top of other elements */
   }
 
   /* Style for the button */
   .scroll-to-top-btn {
     background-color: #007bff;
-    /* Button background color */
     color: white;
-    /* Icon color */
     border-radius: 50%;
-    /* Circle shape */
     width: 50px;
-    /* Width of the circle */
     height: 50px;
-    /* Height of the circle */
     display: flex;
-    /* Center the icon */
     justify-content: center;
-    /* Horizontally center */
     align-items: center;
-    /* Vertically center */
     font-size: 24px;
-    /* Icon size */
     cursor: pointer;
-    /* Change cursor to pointer */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* Optional shadow */
     transition: background-color 0.3s ease;
-    /* Smooth background color transition */
   }
 
   /* Hover effect for button */
   .scroll-to-top-btn:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
   }
 
   /* Optional - Icon inside button */
   .scroll-to-top-btn i {
     font-size: 24px;
-    /* Adjust icon size if needed */
   }
 </style>
 
@@ -456,7 +376,7 @@
 
   <div class="container-fluid"
     style="background: url('./Assets/image/hero_home_01.jpg'); background-repeat: no-repeat; background-size: cover; padding: 100px 0px !important;">
-    <div class="equal-height-container container p-5">
+    <div class="equal-height-container container p-3">
       <!-- Our Locations Section -->
       <div class="equal-height-item">
         <h1 class="mb-4">Our Locations</h1>

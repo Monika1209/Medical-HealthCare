@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 .navbar {
-    background-color: #f8f9fa; /* Light background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for style */
-    padding: 10px 20px; /* Add padding */
-    position: fixed; /* Fix navbar on top */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it stays on top */
+    background-color: #f8f9fa; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px; 
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000; 
 }
 
 /* Show dropdown menu on hover */
@@ -60,7 +60,7 @@
 }
 
 .dropdown-menu {
-    margin-top: 0; 
+    margin-top: 10px; 
 }
 
 .dropdown-menu .dropdown-item:hover {
